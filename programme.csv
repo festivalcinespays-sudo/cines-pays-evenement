@@ -1,203 +1,203 @@
-﻿cinema,jour,heure,film,salle,mention,affiche,jeune
-bobine,2026-10-21,10h30,Le Monde à l’envers,Salle 1,,le-monde-a-l-envers.jpg,oui
-bobine,2026-10-21,10h30,Joyeuse Jungle !,Salle 2,,joyeuse-jungle.jpg,oui
-bobine,2026-10-21,14h30,"Kerity, la maison des contes",Salle 2,cj,kerity-la-maison-des-contes.jpg,oui
-bobine,2026-10-21,15h30,Doraemon et le Château sous-marin,Salle 1,,doraemon-et-le-chateau-sous-marin.jpg,oui
-bobine,2026-10-21,20h30,Les Misérables,Salle 1,,les-miserables.jpg,
-bobine,2026-10-21,20h30,Karma,Salle 2,sn,karma.jpg,
-bobine,2026-10-22,10h30,Joyeuse Jungle !,Salle 1,,joyeuse-jungle.jpg,oui
-bobine,2026-10-22,10h30,Shaun le mouton et la bêêête d’Halloween,Salle 2,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-bobine,2026-10-22,14h30,Les Misérables,Salle 1,,les-miserables.jpg,
-bobine,2026-10-22,14h30,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-bobine,2026-10-22,20h30,"Ni vue, ni connue",Salle 1,,ni-vue-ni-connue.jpg,
-bobine,2026-10-22,20h30,Karma,Salle 2,sn,karma.jpg,
-bobine,2026-10-23,10h30,Doraemon et le Château sous-marin,Salle 1,,doraemon-et-le-chateau-sous-marin.jpg,oui
-bobine,2026-10-23,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui
-bobine,2026-10-23,14h30,Shaun le mouton et la bêêête d’Halloween,Salle 1,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-bobine,2026-10-23,14h30,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-bobine,2026-10-23,17h30,Digger,Salle 1,,digger.jpg,
-bobine,2026-10-23,17h30,Karma,Salle 2,sn,karma.jpg,
-bobine,2026-10-23,20h30,"Ni vue, ni connue",Salle 1,,ni-vue-ni-connue.jpg,
-bobine,2026-10-23,20h30,Hunger Games : La Révolte — Partie 1,Salle 2,,hunger-games-la-revolte-partie-1.jpg,
-bobine,2026-10-24,17h00,Digger,Salle 2,,digger.jpg,
-bobine,2026-10-24,17h45,Shaun le mouton et la bêêête d’Halloween,Salle 1,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-bobine,2026-10-24,20h30,Karma,Salle 1,sn,karma.jpg,
-bobine,2026-10-24,20h30,Les Misérables,Salle 2,,les-miserables.jpg,
-bobine,2026-10-25,10h30,Le Monde à l’envers,Salle 1,,le-monde-a-l-envers.jpg,oui
-bobine,2026-10-25,10h30,Joyeuse Jungle !,Salle 2,,joyeuse-jungle.jpg,oui
-bobine,2026-10-25,15h00,"Louve, une vie dans les Alpes",Salle 1,avp|renc,louve-une-vie-dans-les-alpes.jpg,
-bobine,2026-10-25,15h00,Doraemon et le Château sous-marin,Salle 2,,doraemon-et-le-chateau-sous-marin.jpg,oui
-bobine,2026-10-25,17h45,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-bobine,2026-10-25,17h45,"Ni vue, ni connue",Salle 2,,ni-vue-ni-connue.jpg,
-bobine,2026-10-25,20h30,Les Misérables,Salle 1,,les-miserables.jpg,
-bobine,2026-10-25,20h30,Les Éléphants dans la brume,Salle 2,,les-elephants-dans-la-brume.jpg,oui
-bobine,2026-10-26,14h30,Les Misérables,Salle 1,,les-miserables.jpg,
-bobine,2026-10-26,14h30,"Ni vue, ni connue",Salle 2,,ni-vue-ni-connue.jpg,
-bobine,2026-10-26,20h30,Karma,Salle 1,sn,karma.jpg,
-bobine,2026-10-26,20h30,Digger,Salle 2,,digger.jpg,
-bobine,2026-10-27,9h00,Stage mini-film,Salle 2,stage|renc:Atelier 8–11 ans · 2 €,,
-bobine,2026-10-27,10h30,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-bobine,2026-10-27,14h30,Doraemon et le Château sous-marin,Salle 1,,doraemon-et-le-chateau-sous-marin.jpg,oui
-bobine,2026-10-27,14h30,Shaun le mouton et la bêêête d’Halloween,Salle 2,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-bobine,2026-10-27,20h30,Les Misérables,Salle 1,,les-miserables.jpg,
-bobine,2026-10-27,20h30,Karma,Salle 2,sn,karma.jpg,
-montal,2026-10-21,10h00,Doraemon et le Château sous-marin,,,doraemon-et-le-chateau-sous-marin.jpg,oui
-montal,2026-10-21,14h00,Shaun le mouton et la bêêête d’Halloween,,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-montal,2026-10-21,17h00,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-montal,2026-10-21,20h00,Les Misérables,,,les-miserables.jpg,
-montal,2026-10-22,11h00,Un amour d’épouvantail,,cj:Séance enfants,un-amour-d-epouvantail.jpg,oui
-montal,2026-10-22,14h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-montal,2026-10-22,17h30,Digger,,,digger.jpg,
-montal,2026-10-22,20h30,"Louve, une vie dans les Alpes",,avp|renc,louve-une-vie-dans-les-alpes.jpg,
-montal,2026-10-23,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,
-montal,2026-10-23,14h30,Même les souris vont au paradis,,cj,meme-les-souris-vont-au-paradis.jpg,oui
-montal,2026-10-23,17h00,Les Misérables,,,les-miserables.jpg,
-montal,2026-10-23,20h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-montal,2026-10-24,11h00,Le Cygne et l’enfant,,,le-cygne-et-l-enfant.jpg,oui
-montal,2026-10-24,17h00,Shaun le mouton et la bêêête d’Halloween,,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-montal,2026-10-24,20h30,Les Misérables,,,les-miserables.jpg,
-montal,2026-10-25,10h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-montal,2026-10-25,14h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-montal,2026-10-25,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-montal,2026-10-25,20h00,Les Misérables,,,les-miserables.jpg,
-montal,2026-10-26,10h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-montal,2026-10-26,14h30,Doraemon et le Château sous-marin,,,doraemon-et-le-chateau-sous-marin.jpg,oui
-montal,2026-10-26,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-montal,2026-10-26,20h30,Digger,,,digger.jpg,
-montal,2026-10-27,10h30,Chien bleu et autres belles histoires de l’école des loisirs,,cj:Séance enfants,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui
-montal,2026-10-27,14h30,Shaun le mouton et la bêêête d’Halloween,,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-montal,2026-10-27,17h00,Les Misérables,,,les-miserables.jpg,
-montal,2026-10-27,20h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-cane,2026-10-21,11h00,Chien bleu et autres belles histoires de l’école des loisirs,,,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui
-cane,2026-10-21,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-cane,2026-10-21,17h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-cane,2026-10-21,20h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-cane,2026-10-22,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,
-cane,2026-10-22,15h00,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-cane,2026-10-22,17h30,Tombé du ciel,,,tombe-du-ciel.jpg,
-cane,2026-10-22,20h30,"Justin, le juste",,,justin-le-juste.jpg,
-cane,2026-10-23,11h00,Joyeuse Jungle !,,,joyeuse-jungle.jpg,oui
-cane,2026-10-23,15h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-cane,2026-10-23,17h30,La Vie d’une femme,,,la-vie-d-une-femme.jpg,
-cane,2026-10-23,20h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-cane,2026-10-24,14h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-cane,2026-10-24,17h00,Notre salut,,,notre-salut.jpg,
-cane,2026-10-24,20h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-cane,2026-10-25,10h30,Un amour d’épouvantail,,cj:Mon Petit Ciné,un-amour-d-epouvantail.jpg,oui
-cane,2026-10-25,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-cane,2026-10-25,17h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-cane,2026-10-25,20h30,Moulin,,avp,moulin.jpg,
-cane,2026-10-26,11h00,Joyeuse Jungle !,,,joyeuse-jungle.jpg,oui
-cane,2026-10-26,14h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-cane,2026-10-26,17h00,Spider-Man : Brand New Day,,,spider-man-brand-new-day.jpg,
-cane,2026-10-26,20h30,"Louve, une vie dans les Alpes",,avp|renc,louve-une-vie-dans-les-alpes.jpg,
-cane,2026-10-27,10h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-cane,2026-10-27,14h30,Le Robot sauvage,,cj,le-robot-sauvage.jpg,oui
-cane,2026-10-27,17h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-cane,2026-10-27,20h30,Notre salut,,,notre-salut.jpg,
-hermine,2026-10-21,10h45,Chien bleu et autres belles histoires de l’école des loisirs,,,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui
-hermine,2026-10-21,14h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-hermine,2026-10-21,16h00,Le Corset,,,le-corset.jpg,
-hermine,2026-10-21,18h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-hermine,2026-10-21,20h30,Camembert,,avp,camembert.jpg,
-hermine,2026-10-22,14h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-hermine,2026-10-22,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-hermine,2026-10-22,20h30,Digger,,vost,digger.jpg,
-hermine,2026-10-23,14h30,"Justin, le juste",,,justin-le-juste.jpg,
-hermine,2026-10-23,17h00,Fausse Note,,,fausse-note.jpg,
-hermine,2026-10-23,20h30,Le Corset,,,le-corset.jpg,
-hermine,2026-10-24,10h45,Nouveaux copains à Puffin Rock,,,nouveaux-copains-a-puffin-rock.jpg,oui
-hermine,2026-10-24,14h30,Le Corset,,,le-corset.jpg,
-hermine,2026-10-24,17h00,Sherlock Junior,,cj,sherlock-junior.jpg,
-hermine,2026-10-24,20h30,Digger,,,digger.jpg,
-hermine,2026-10-25,14h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-hermine,2026-10-25,17h00,Moulin,,avp,moulin.jpg,
-hermine,2026-10-25,20h30,Fausse Note,,,fausse-note.jpg,
-hermine,2026-10-26,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,
-hermine,2026-10-26,14h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-hermine,2026-10-26,17h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-hermine,2026-10-26,20h30,"Justin, le juste",,,justin-le-juste.jpg,
-hermine,2026-10-27,14h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-hermine,2026-10-27,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,
-hermine,2026-10-27,20h30,Les Roches rouges,,,les-roches-rouges.jpg,
-korrigan,2026-10-21,10h30,Un amour d’épouvantail,,,un-amour-d-epouvantail.jpg,oui
-korrigan,2026-10-21,15h00,Ma famille de samouraïs,,,ma-famille-de-samourais.jpg,oui
-korrigan,2026-10-21,17h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-korrigan,2026-10-21,20h30,Les Héros du Louvre,,,les-heros-du-louvre.jpg,
-korrigan,2026-10-22,10h30,Le Cygne et l’enfant,,,le-cygne-et-l-enfant.jpg,oui
-korrigan,2026-10-22,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-korrigan,2026-10-22,17h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-korrigan,2026-10-22,20h30,Le Corset,,,le-corset.jpg,
-korrigan,2026-10-23,10h30,Chien bleu et autres belles histoires de l’école des loisirs,,,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui
-korrigan,2026-10-23,15h00,Le Corset,,,le-corset.jpg,
-korrigan,2026-10-23,17h30,Spider-Man : Brand New Day,,,spider-man-brand-new-day.jpg,
-korrigan,2026-10-23,20h30,Heart of the Beast,,,heart-of-the-beast.jpg,
-korrigan,2026-10-24,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,
-korrigan,2026-10-24,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-korrigan,2026-10-24,17h30,Tombé du ciel,,,tombe-du-ciel.jpg,
-korrigan,2026-10-24,20h30,Fausse Note,,,fausse-note.jpg,
-korrigan,2026-10-25,10h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui
-korrigan,2026-10-25,15h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-korrigan,2026-10-25,17h30,Le Corset,,,le-corset.jpg,
-korrigan,2026-10-25,20h30,"Justin, le juste",,,justin-le-juste.jpg,
-korrigan,2026-10-26,10h30,Le Monde à l’envers,,,le-monde-a-l-envers.jpg,oui
-korrigan,2026-10-26,14h30,Le Robot sauvage,,cj,le-robot-sauvage.jpg,oui
-korrigan,2026-10-26,18h00,Garance,,,garance.jpg,
-korrigan,2026-10-26,20h30,Les Roches rouges,,,les-roches-rouges.jpg,
-korrigan,2026-10-27,10h30,La Pat’ Patrouille : Le film mission Dino,,,la-pat-patrouille-le-film-mission-dino.jpg,oui
-korrigan,2026-10-27,14h30,Ma famille de samouraïs,,,ma-famille-de-samourais.jpg,oui
-korrigan,2026-10-27,18h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-korrigan,2026-10-27,20h30,Fausse Note,,,fausse-note.jpg,
-celtic,2026-10-21,9h00,Stage mini-film,Salle 1,stage|renc:Atelier 8–11 ans · 2 €,,
-celtic,2026-10-21,15h00,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-celtic,2026-10-21,15h00,L’Île des souvenirs,Salle 2,,l-ile-des-souvenirs.jpg,oui
-celtic,2026-10-21,17h00,Stage mini-film adultes,Salle 1,stage|renc:Atelier adultes,,
-celtic,2026-10-21,17h30,Spider-Man : Brand New Day,Salle 2,,spider-man-brand-new-day.jpg,
-celtic,2026-10-21,20h30,La Maison de nos rêves,Salle 1,,la-maison-de-nos-reves.jpg,
-celtic,2026-10-21,20h30,Les Misérables,Salle 2,,les-miserables.jpg,
-celtic,2026-10-22,10h30,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-celtic,2026-10-22,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui
-celtic,2026-10-22,15h00,Le Robot sauvage,Salle 1,cj,le-robot-sauvage.jpg,oui
-celtic,2026-10-22,15h00,Le Corset,Salle 2,,le-corset.jpg,
-celtic,2026-10-22,17h30,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-celtic,2026-10-22,20h30,Tombé du ciel,Salle 1,,tombe-du-ciel.jpg,
-celtic,2026-10-22,20h30,Fausse Note,Salle 2,,fausse-note.jpg,
-celtic,2026-10-23,10h30,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-celtic,2026-10-23,10h30,Un amour d’épouvantail,Salle 2,,un-amour-d-epouvantail.jpg,oui
-celtic,2026-10-23,15h00,Cars,Salle 1,,cars.jpg,oui
-celtic,2026-10-23,15h00,L’Île des souvenirs,Salle 2,,l-ile-des-souvenirs.jpg,oui
-celtic,2026-10-23,17h30,Spider-Man : Brand New Day,Salle 1,,spider-man-brand-new-day.jpg,
-celtic,2026-10-23,17h30,Le Corset,Salle 2,,le-corset.jpg,
-celtic,2026-10-23,21h00,Les Misérables,Salle 1,,les-miserables.jpg,
-celtic,2026-10-23,21h00,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-celtic,2026-10-24,10h30,La Pat’ Patrouille : Le film mission Dino,Salle 1,,la-pat-patrouille-le-film-mission-dino.jpg,oui
-celtic,2026-10-24,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui
-celtic,2026-10-24,15h00,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-celtic,2026-10-24,15h00,L’Île des souvenirs,Salle 2,,l-ile-des-souvenirs.jpg,oui
-celtic,2026-10-24,17h30,Spider-Man : Brand New Day,Salle 1,,spider-man-brand-new-day.jpg,
-celtic,2026-10-24,17h30,Les Misérables,Salle 2,,les-miserables.jpg,
-celtic,2026-10-24,21h00,La Maison de nos rêves,Salle 1,,la-maison-de-nos-reves.jpg,
-celtic,2026-10-24,21h00,Digger,Salle 2,,digger.jpg,
-celtic,2026-10-25,10h30,L’Île des souvenirs,Salle 1,,l-ile-des-souvenirs.jpg,oui
-celtic,2026-10-25,10h30,Un amour d’épouvantail,Salle 2,,un-amour-d-epouvantail.jpg,oui
-celtic,2026-10-25,15h00,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-celtic,2026-10-25,15h00,Cars,Salle 2,,cars.jpg,oui
-celtic,2026-10-25,17h30,La Maison de nos rêves,Salle 1,,la-maison-de-nos-reves.jpg,
-celtic,2026-10-25,17h30,Tombé du ciel,Salle 2,,tombe-du-ciel.jpg,
-celtic,2026-10-25,20h30,Les Misérables,Salle 1,,les-miserables.jpg,
-celtic,2026-10-25,20h30,Digger,Salle 2,,digger.jpg,
-celtic,2026-10-26,10h30,Le Corset,Salle 1,,le-corset.jpg,
-celtic,2026-10-26,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui
-celtic,2026-10-26,15h00,L’Île des souvenirs,Salle 1,,l-ile-des-souvenirs.jpg,oui
-celtic,2026-10-26,15h00,Fausse Note,Salle 2,,fausse-note.jpg,
-celtic,2026-10-26,17h30,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui
-celtic,2026-10-26,17h30,La Maison de nos rêves,Salle 2,,la-maison-de-nos-reves.jpg,
-celtic,2026-10-26,20h30,Les Misérables,Salle 1,,les-miserables.jpg,
-celtic,2026-10-26,20h30,Digger,Salle 2,,digger.jpg,
-celtic,2026-10-27,10h30,La Pat’ Patrouille : Le film mission Dino,Salle 1,,la-pat-patrouille-le-film-mission-dino.jpg,oui
-celtic,2026-10-27,10h30,Un amour d’épouvantail,Salle 2,,un-amour-d-epouvantail.jpg,oui
-celtic,2026-10-27,15h00,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui
-celtic,2026-10-27,15h00,Les Misérables,Salle 2,,les-miserables.jpg,
-celtic,2026-10-27,17h30,L’Île des souvenirs,Salle 1,,l-ile-des-souvenirs.jpg,oui
-celtic,2026-10-27,20h30,Fausse Note,Salle 1,,fausse-note.jpg,
-celtic,2026-10-27,20h30,"Louve, une vie dans les Alpes",Salle 2,avp|renc,louve-une-vie-dans-les-alpes.jpg,
+﻿cinema,jour,heure,film,salle,mention,affiche,jeune,interdiction
+bobine,2026-10-21,10h30,Le Monde à l’envers,Salle 1,,le-monde-a-l-envers.jpg,oui,
+bobine,2026-10-21,10h30,Joyeuse Jungle !,Salle 2,,joyeuse-jungle.jpg,oui,
+bobine,2026-10-21,14h30,"Kerity, la maison des contes",Salle 2,cj,kerity-la-maison-des-contes.jpg,oui,
+bobine,2026-10-21,15h30,Doraemon et le Château sous-marin,Salle 1,,doraemon-et-le-chateau-sous-marin.jpg,oui,
+bobine,2026-10-21,20h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+bobine,2026-10-21,20h30,Karma,Salle 2,sn,karma.jpg,,
+bobine,2026-10-22,10h30,Joyeuse Jungle !,Salle 1,,joyeuse-jungle.jpg,oui,
+bobine,2026-10-22,10h30,Shaun le mouton et la bêêête d’Halloween,Salle 2,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+bobine,2026-10-22,14h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+bobine,2026-10-22,14h30,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+bobine,2026-10-22,20h30,"Ni vue, ni connue",Salle 1,,ni-vue-ni-connue.jpg,,
+bobine,2026-10-22,20h30,Karma,Salle 2,sn,karma.jpg,,
+bobine,2026-10-23,10h30,Doraemon et le Château sous-marin,Salle 1,,doraemon-et-le-chateau-sous-marin.jpg,oui,
+bobine,2026-10-23,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui,
+bobine,2026-10-23,14h30,Shaun le mouton et la bêêête d’Halloween,Salle 1,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+bobine,2026-10-23,14h30,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+bobine,2026-10-23,17h30,Digger,Salle 1,,digger.jpg,,
+bobine,2026-10-23,17h30,Karma,Salle 2,sn,karma.jpg,,
+bobine,2026-10-23,20h30,"Ni vue, ni connue",Salle 1,,ni-vue-ni-connue.jpg,,
+bobine,2026-10-23,20h30,Hunger Games : La Révolte — Partie 1,Salle 2,,hunger-games-la-revolte-partie-1.jpg,,
+bobine,2026-10-24,17h00,Digger,Salle 2,,digger.jpg,,
+bobine,2026-10-24,17h45,Shaun le mouton et la bêêête d’Halloween,Salle 1,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+bobine,2026-10-24,20h30,Karma,Salle 1,sn,karma.jpg,,
+bobine,2026-10-24,20h30,Les Misérables,Salle 2,,les-miserables.jpg,,
+bobine,2026-10-25,10h30,Le Monde à l’envers,Salle 1,,le-monde-a-l-envers.jpg,oui,
+bobine,2026-10-25,10h30,Joyeuse Jungle !,Salle 2,,joyeuse-jungle.jpg,oui,
+bobine,2026-10-25,15h00,"Louve, une vie dans les Alpes",Salle 1,avp|renc,louve-une-vie-dans-les-alpes.jpg,,
+bobine,2026-10-25,15h00,Doraemon et le Château sous-marin,Salle 2,,doraemon-et-le-chateau-sous-marin.jpg,oui,
+bobine,2026-10-25,17h45,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+bobine,2026-10-25,17h45,"Ni vue, ni connue",Salle 2,,ni-vue-ni-connue.jpg,,
+bobine,2026-10-25,20h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+bobine,2026-10-25,20h30,Les Éléphants dans la brume,Salle 2,,les-elephants-dans-la-brume.jpg,oui,
+bobine,2026-10-26,14h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+bobine,2026-10-26,14h30,"Ni vue, ni connue",Salle 2,,ni-vue-ni-connue.jpg,,
+bobine,2026-10-26,20h30,Karma,Salle 1,sn,karma.jpg,,
+bobine,2026-10-26,20h30,Digger,Salle 2,,digger.jpg,,
+bobine,2026-10-27,9h00,Stage mini-film,Salle 2,stage|renc:Atelier 8–11 ans · 2 €,,,
+bobine,2026-10-27,10h30,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+bobine,2026-10-27,14h30,Doraemon et le Château sous-marin,Salle 1,,doraemon-et-le-chateau-sous-marin.jpg,oui,
+bobine,2026-10-27,14h30,Shaun le mouton et la bêêête d’Halloween,Salle 2,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+bobine,2026-10-27,20h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+bobine,2026-10-27,20h30,Karma,Salle 2,sn,karma.jpg,,
+montal,2026-10-21,10h00,Doraemon et le Château sous-marin,,,doraemon-et-le-chateau-sous-marin.jpg,oui,
+montal,2026-10-21,14h00,Shaun le mouton et la bêêête d’Halloween,,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+montal,2026-10-21,17h00,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+montal,2026-10-21,20h00,Les Misérables,,,les-miserables.jpg,,
+montal,2026-10-22,11h00,Un amour d’épouvantail,,cj:Séance enfants,un-amour-d-epouvantail.jpg,oui,
+montal,2026-10-22,14h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+montal,2026-10-22,17h30,Digger,,,digger.jpg,,
+montal,2026-10-22,20h30,"Louve, une vie dans les Alpes",,avp|renc,louve-une-vie-dans-les-alpes.jpg,,
+montal,2026-10-23,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,,
+montal,2026-10-23,14h30,Même les souris vont au paradis,,cj,meme-les-souris-vont-au-paradis.jpg,oui,
+montal,2026-10-23,17h00,Les Misérables,,,les-miserables.jpg,,
+montal,2026-10-23,20h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+montal,2026-10-24,11h00,Le Cygne et l’enfant,,,le-cygne-et-l-enfant.jpg,oui,
+montal,2026-10-24,17h00,Shaun le mouton et la bêêête d’Halloween,,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+montal,2026-10-24,20h30,Les Misérables,,,les-miserables.jpg,,
+montal,2026-10-25,10h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+montal,2026-10-25,14h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+montal,2026-10-25,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+montal,2026-10-25,20h00,Les Misérables,,,les-miserables.jpg,,
+montal,2026-10-26,10h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+montal,2026-10-26,14h30,Doraemon et le Château sous-marin,,,doraemon-et-le-chateau-sous-marin.jpg,oui,
+montal,2026-10-26,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+montal,2026-10-26,20h30,Digger,,,digger.jpg,,
+montal,2026-10-27,10h30,Chien bleu et autres belles histoires de l’école des loisirs,,cj:Séance enfants,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui,
+montal,2026-10-27,14h30,Shaun le mouton et la bêêête d’Halloween,,sn,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+montal,2026-10-27,17h00,Les Misérables,,,les-miserables.jpg,,
+montal,2026-10-27,20h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+cane,2026-10-21,11h00,Chien bleu et autres belles histoires de l’école des loisirs,,,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui,
+cane,2026-10-21,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+cane,2026-10-21,17h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+cane,2026-10-21,20h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+cane,2026-10-22,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,,
+cane,2026-10-22,15h00,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+cane,2026-10-22,17h30,Tombé du ciel,,,tombe-du-ciel.jpg,,
+cane,2026-10-22,20h30,"Justin, le juste",,,justin-le-juste.jpg,,
+cane,2026-10-23,11h00,Joyeuse Jungle !,,,joyeuse-jungle.jpg,oui,
+cane,2026-10-23,15h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+cane,2026-10-23,17h30,La Vie d’une femme,,,la-vie-d-une-femme.jpg,,
+cane,2026-10-23,20h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+cane,2026-10-24,14h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+cane,2026-10-24,17h00,Notre salut,,,notre-salut.jpg,,
+cane,2026-10-24,20h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+cane,2026-10-25,10h30,Un amour d’épouvantail,,cj:Mon Petit Ciné,un-amour-d-epouvantail.jpg,oui,
+cane,2026-10-25,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+cane,2026-10-25,17h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+cane,2026-10-25,20h30,Moulin,,avp,moulin.jpg,,
+cane,2026-10-26,11h00,Joyeuse Jungle !,,,joyeuse-jungle.jpg,oui,
+cane,2026-10-26,14h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+cane,2026-10-26,17h00,Spider-Man : Brand New Day,,,spider-man-brand-new-day.jpg,,
+cane,2026-10-26,20h30,"Louve, une vie dans les Alpes",,avp|renc,louve-une-vie-dans-les-alpes.jpg,,
+cane,2026-10-27,10h30,"Mochy, le chien le plus moche du monde",,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+cane,2026-10-27,14h30,Le Robot sauvage,,cj,le-robot-sauvage.jpg,oui,
+cane,2026-10-27,17h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+cane,2026-10-27,20h30,Notre salut,,,notre-salut.jpg,,
+hermine,2026-10-21,10h45,Chien bleu et autres belles histoires de l’école des loisirs,,,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui,
+hermine,2026-10-21,14h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+hermine,2026-10-21,16h00,Le Corset,,,le-corset.jpg,,
+hermine,2026-10-21,18h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+hermine,2026-10-21,20h30,Camembert,,avp,camembert.jpg,,
+hermine,2026-10-22,14h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+hermine,2026-10-22,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+hermine,2026-10-22,20h30,Digger,,vost,digger.jpg,,
+hermine,2026-10-23,14h30,"Justin, le juste",,,justin-le-juste.jpg,,
+hermine,2026-10-23,17h00,Fausse Note,,,fausse-note.jpg,,
+hermine,2026-10-23,20h30,Le Corset,,,le-corset.jpg,,
+hermine,2026-10-24,10h45,Nouveaux copains à Puffin Rock,,,nouveaux-copains-a-puffin-rock.jpg,oui,
+hermine,2026-10-24,14h30,Le Corset,,,le-corset.jpg,,
+hermine,2026-10-24,17h00,Sherlock Junior,,cj,sherlock-junior.jpg,,
+hermine,2026-10-24,20h30,Digger,,,digger.jpg,,
+hermine,2026-10-25,14h30,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+hermine,2026-10-25,17h00,Moulin,,avp,moulin.jpg,,
+hermine,2026-10-25,20h30,Fausse Note,,,fausse-note.jpg,,
+hermine,2026-10-26,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,,
+hermine,2026-10-26,14h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+hermine,2026-10-26,17h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+hermine,2026-10-26,20h30,"Justin, le juste",,,justin-le-juste.jpg,,
+hermine,2026-10-27,14h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+hermine,2026-10-27,17h00,La Maison de nos rêves,,,la-maison-de-nos-reves.jpg,,
+hermine,2026-10-27,20h30,Les Roches rouges,,,les-roches-rouges.jpg,,
+korrigan,2026-10-21,10h30,Un amour d’épouvantail,,,un-amour-d-epouvantail.jpg,oui,
+korrigan,2026-10-21,15h00,Ma famille de samouraïs,,,ma-famille-de-samourais.jpg,oui,
+korrigan,2026-10-21,17h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+korrigan,2026-10-21,20h30,Les Héros du Louvre,,,les-heros-du-louvre.jpg,,
+korrigan,2026-10-22,10h30,Le Cygne et l’enfant,,,le-cygne-et-l-enfant.jpg,oui,
+korrigan,2026-10-22,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+korrigan,2026-10-22,17h30,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+korrigan,2026-10-22,20h30,Le Corset,,,le-corset.jpg,,
+korrigan,2026-10-23,10h30,Chien bleu et autres belles histoires de l’école des loisirs,,,chien-bleu-et-autres-belles-histoires-de-l-ecole-des-loisirs.jpg,oui,
+korrigan,2026-10-23,15h00,Le Corset,,,le-corset.jpg,,
+korrigan,2026-10-23,17h30,Spider-Man : Brand New Day,,,spider-man-brand-new-day.jpg,,
+korrigan,2026-10-23,20h30,Heart of the Beast,,,heart-of-the-beast.jpg,,
+korrigan,2026-10-24,9h00,Stage mini-film,,stage|renc:Atelier 8–11 ans · 2 €,,,
+korrigan,2026-10-24,15h00,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+korrigan,2026-10-24,17h30,Tombé du ciel,,,tombe-du-ciel.jpg,,
+korrigan,2026-10-24,20h30,Fausse Note,,,fausse-note.jpg,,
+korrigan,2026-10-25,10h30,Shaun le mouton et la bêêête d’Halloween,,,shaun-le-mouton-et-la-beeete-d-halloween.jpg,oui,
+korrigan,2026-10-25,15h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+korrigan,2026-10-25,17h30,Le Corset,,,le-corset.jpg,,
+korrigan,2026-10-25,20h30,"Justin, le juste",,,justin-le-juste.jpg,,
+korrigan,2026-10-26,10h30,Le Monde à l’envers,,,le-monde-a-l-envers.jpg,oui,
+korrigan,2026-10-26,14h30,Le Robot sauvage,,cj,le-robot-sauvage.jpg,oui,
+korrigan,2026-10-26,18h00,Garance,,,garance.jpg,,
+korrigan,2026-10-26,20h30,Les Roches rouges,,,les-roches-rouges.jpg,,
+korrigan,2026-10-27,10h30,La Pat’ Patrouille : Le film mission Dino,,,la-pat-patrouille-le-film-mission-dino.jpg,oui,
+korrigan,2026-10-27,14h30,Ma famille de samouraïs,,,ma-famille-de-samourais.jpg,oui,
+korrigan,2026-10-27,18h00,Ducobu et le fantôme de Saint Potache,,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+korrigan,2026-10-27,20h30,Fausse Note,,,fausse-note.jpg,,
+celtic,2026-10-21,9h00,Stage mini-film,Salle 1,stage|renc:Atelier 8–11 ans · 2 €,,,
+celtic,2026-10-21,15h00,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+celtic,2026-10-21,15h00,L’Île des souvenirs,Salle 2,,l-ile-des-souvenirs.jpg,oui,
+celtic,2026-10-21,17h00,Stage mini-film adultes,Salle 1,stage|renc:Atelier adultes,,,
+celtic,2026-10-21,17h30,Spider-Man : Brand New Day,Salle 2,,spider-man-brand-new-day.jpg,,
+celtic,2026-10-21,20h30,La Maison de nos rêves,Salle 1,,la-maison-de-nos-reves.jpg,,
+celtic,2026-10-21,20h30,Les Misérables,Salle 2,,les-miserables.jpg,,
+celtic,2026-10-22,10h30,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+celtic,2026-10-22,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui,
+celtic,2026-10-22,15h00,Le Robot sauvage,Salle 1,cj,le-robot-sauvage.jpg,oui,
+celtic,2026-10-22,15h00,Le Corset,Salle 2,,le-corset.jpg,,
+celtic,2026-10-22,17h30,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+celtic,2026-10-22,20h30,Tombé du ciel,Salle 1,,tombe-du-ciel.jpg,,
+celtic,2026-10-22,20h30,Fausse Note,Salle 2,,fausse-note.jpg,,
+celtic,2026-10-23,10h30,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+celtic,2026-10-23,10h30,Un amour d’épouvantail,Salle 2,,un-amour-d-epouvantail.jpg,oui,
+celtic,2026-10-23,15h00,Cars,Salle 1,,cars.jpg,oui,
+celtic,2026-10-23,15h00,L’Île des souvenirs,Salle 2,,l-ile-des-souvenirs.jpg,oui,
+celtic,2026-10-23,17h30,Spider-Man : Brand New Day,Salle 1,,spider-man-brand-new-day.jpg,,
+celtic,2026-10-23,17h30,Le Corset,Salle 2,,le-corset.jpg,,
+celtic,2026-10-23,21h00,Les Misérables,Salle 1,,les-miserables.jpg,,
+celtic,2026-10-23,21h00,Ducobu et le fantôme de Saint Potache,Salle 2,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+celtic,2026-10-24,10h30,La Pat’ Patrouille : Le film mission Dino,Salle 1,,la-pat-patrouille-le-film-mission-dino.jpg,oui,
+celtic,2026-10-24,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui,
+celtic,2026-10-24,15h00,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+celtic,2026-10-24,15h00,L’Île des souvenirs,Salle 2,,l-ile-des-souvenirs.jpg,oui,
+celtic,2026-10-24,17h30,Spider-Man : Brand New Day,Salle 1,,spider-man-brand-new-day.jpg,,
+celtic,2026-10-24,17h30,Les Misérables,Salle 2,,les-miserables.jpg,,
+celtic,2026-10-24,21h00,La Maison de nos rêves,Salle 1,,la-maison-de-nos-reves.jpg,,
+celtic,2026-10-24,21h00,Digger,Salle 2,,digger.jpg,,
+celtic,2026-10-25,10h30,L’Île des souvenirs,Salle 1,,l-ile-des-souvenirs.jpg,oui,
+celtic,2026-10-25,10h30,Un amour d’épouvantail,Salle 2,,un-amour-d-epouvantail.jpg,oui,
+celtic,2026-10-25,15h00,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+celtic,2026-10-25,15h00,Cars,Salle 2,,cars.jpg,oui,
+celtic,2026-10-25,17h30,La Maison de nos rêves,Salle 1,,la-maison-de-nos-reves.jpg,,
+celtic,2026-10-25,17h30,Tombé du ciel,Salle 2,,tombe-du-ciel.jpg,,
+celtic,2026-10-25,20h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+celtic,2026-10-25,20h30,Digger,Salle 2,,digger.jpg,,
+celtic,2026-10-26,10h30,Le Corset,Salle 1,,le-corset.jpg,,
+celtic,2026-10-26,10h30,Le Monde à l’envers,Salle 2,,le-monde-a-l-envers.jpg,oui,
+celtic,2026-10-26,15h00,L’Île des souvenirs,Salle 1,,l-ile-des-souvenirs.jpg,oui,
+celtic,2026-10-26,15h00,Fausse Note,Salle 2,,fausse-note.jpg,,
+celtic,2026-10-26,17h30,Ducobu et le fantôme de Saint Potache,Salle 1,,ducobu-et-le-fantome-de-saint-potache.jpg,oui,
+celtic,2026-10-26,17h30,La Maison de nos rêves,Salle 2,,la-maison-de-nos-reves.jpg,,
+celtic,2026-10-26,20h30,Les Misérables,Salle 1,,les-miserables.jpg,,
+celtic,2026-10-26,20h30,Digger,Salle 2,,digger.jpg,,
+celtic,2026-10-27,10h30,La Pat’ Patrouille : Le film mission Dino,Salle 1,,la-pat-patrouille-le-film-mission-dino.jpg,oui,
+celtic,2026-10-27,10h30,Un amour d’épouvantail,Salle 2,,un-amour-d-epouvantail.jpg,oui,
+celtic,2026-10-27,15h00,"Mochy, le chien le plus moche du monde",Salle 1,,mochy-le-chien-le-plus-moche-du-monde.jpg,oui,
+celtic,2026-10-27,15h00,Les Misérables,Salle 2,,les-miserables.jpg,,
+celtic,2026-10-27,17h30,L’Île des souvenirs,Salle 1,,l-ile-des-souvenirs.jpg,oui,
+celtic,2026-10-27,20h30,Fausse Note,Salle 1,,fausse-note.jpg,,
+celtic,2026-10-27,20h30,"Louve, une vie dans les Alpes",Salle 2,avp|renc,louve-une-vie-dans-les-alpes.jpg,,
