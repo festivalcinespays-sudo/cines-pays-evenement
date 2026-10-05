@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Tout le JavaScript est dans app.js : la CSP n'autorise plus aucun script
+     écrit dans la page (script-src 'self'), et plus aucun serveur extérieur. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Cinés-Pays — Festival de 6 cinémas de Brocéliande</title>
+<meta name="description" content="Festival Cinés-Pays : une semaine de cinéma dans les 6 salles associatives de Brocéliande (Bréal, Montauban, Montfort, Plélan, Romillé, Saint-Méen). Programme, horaires et tarifs.">
+<meta name="theme-color" content="#f3ead7">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Festival Cinés-Pays">
+<meta property="og:description" content="Une semaine de cinéma dans les 6 salles associatives de Brocéliande, pendant les vacances de la Toussaint.">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8E%9E%EF%B8%8F</text></svg>">
+<link rel="preload" href="./bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Sans JavaScript, les blocs qui apparaissent au défilement restent visibles -->
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* ------------------------------------------------------------- POLICES
+   Hébergées sur le site (dossier ./), et non plus chez Google Fonts :
+   aucune adresse IP de visiteur n'est transmise à un tiers.
+   Bricolage Grotesque et Outfit : licence libre SIL Open Font License. */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;
+  src:url(./bricolage-grotesque-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;
+  src:url(./bricolage-grotesque-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:300 600;font-display:swap;
+  src:url(./outfit-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:300 600;font-display:swap;
+  src:url(./outfit-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* =====================================================================
+   CINÉS-PAYS — feuille de style unique, sans librairie externe.
+   Direction : le programme papier d'un cinéma de village.
+   Papier crème + deux encres (rouge rideau, vert Brocéliande) + ambre
+   d'enseigne. Le programme se lit « salle éteinte » : bandeau velours.
+   ===================================================================== */
+:root{
+  --nuit:#130d0a; --nuit-2:#1f1510; --ampoule:#ffd98e;
+  --papier:#f3ead7; --papier-clair:#fbf5e8; --papier-fonce:#e7d9bd;
+  --encre:#241a13; --encre-doux:#6c5a49; --trait:rgba(36,26,19,.14);
+  --rouge:#b32a1e; --rouge-sombre:#7d1a12; --velours:#8a2119; --velours-nuit:#5d130e;
+  --or:#d78a0c; --or-clair:#f2b544; --foret:#1f4a38; --foret-nuit:#14291f;
+  --pass-a:#eb2f6b; --pass-b:#8a2be2;
+  --r:14px; --ease:cubic-bezier(.16,1,.3,1); --haut:72px; --haut-colle:58px;
+  --ombre:0 14px 30px -18px rgba(66,38,20,.55);
+  --tf:'Bricolage Grotesque','Trebuchet MS','Segoe UI',sans-serif;
+  --tc:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--haut-colle);-webkit-text-size-adjust:100%}
+/* Le bandeau se rétracte dès qu'on défile : l'arrêt des ancres se cale sur sa
+   hauteur RÉDUITE (--haut-colle), sinon un reste de la section précédente
+   dépasse sous l'en-tête. La marge négative rogne un peu du padding haut de
+   la section visée, pour que son titre arrive franchement en haut de l'écran. */
+section[id]{scroll-margin-top:-1.4rem}
+body{
+  font-family:var(--tc);background:var(--papier);color:var(--encre);line-height:1.6;overflow-x:hidden;
+  background-image:
+    radial-gradient(1200px 680px at 82% -10%,rgba(215,138,12,.20),transparent 60%),
+    radial-gradient(820px 560px at 4% 6%,rgba(31,74,56,.12),transparent 62%),
+    radial-gradient(900px 700px at 50% 108%,rgba(179,42,30,.10),transparent 60%);
+  background-attachment:fixed;
+}
+/* grain de papier, purement décoratif */
+body::after{
+  content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.16'/></svg>");
+}
+a{color:inherit;text-decoration:none} ul,ol{list-style:none} img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--rouge);outline-offset:3px;border-radius:6px}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic--p{fill:currentColor;stroke:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+
+/* ------------------------------------------- BARRE DE PROGRESSION */
+.progression{
+  position:fixed;top:0;left:0;width:100%;height:4px;z-index:950;pointer-events:none;
+  background:rgba(36,26,19,.10);opacity:0;transition:opacity .35s var(--ease);
+}
+.progression.active{opacity:1}
+.progression__jauge{
+  display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--or),var(--rouge));
+  transition:background .45s var(--ease);
+}
+.progression__tete{
+  position:absolute;top:50%;left:0;width:10px;height:10px;border-radius:50%;background:var(--rouge);
+  transform:translate(-50%,-50%) scale(.6);opacity:0;
+  box-shadow:0 0 0 3px rgba(243,234,215,.85),0 0 14px rgba(179,42,30,.7);
+  transition:background .45s var(--ease),box-shadow .45s var(--ease),transform .35s var(--ease),opacity .35s var(--ease);
+}
+.progression.active .progression__tete{opacity:1;transform:translate(-50%,-50%) scale(1)}
+/* on remonte : la jauge vire au vert Brocéliande */
+.progression.monte .progression__jauge{background:linear-gradient(90deg,var(--foret),var(--or))}
+.progression.monte .progression__tete{background:var(--foret);box-shadow:0 0 0 3px rgba(243,234,215,.85),0 0 14px rgba(31,74,56,.6)}
+
+/* ------------------------------------------------------------- EN-TÊTE */
+.bandeau{
+  position:fixed;top:0;left:0;width:100%;z-index:900;display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;padding:1rem 5%;
+  transition:background .35s var(--ease),padding .35s var(--ease),box-shadow .35s var(--ease);
+}
+/* le flou est porté par un pseudo-élément : appliqué au <header>, il ferait de
+   celui-ci le bloc conteneur du menu mobile en position fixe (menu tronqué). */
+.bandeau::before{
+  content:'';position:absolute;inset:0;z-index:-1;opacity:0;
+  background:rgba(251,245,232,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--trait),0 10px 30px -22px rgba(66,38,20,.6);
+  transition:opacity .35s var(--ease);
+}
+.bandeau.colle::before{opacity:1}
+.bandeau.colle{padding:.5rem 5%}
+.marque{display:flex;align-items:center;gap:.7rem;z-index:902}
+.marque__pic{
+  width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;color:var(--papier-clair);
+  background:radial-gradient(circle at 50% 50%,var(--rouge) 0 34%,var(--velours-nuit) 36%);
+  box-shadow:inset 0 0 0 2px rgba(251,245,232,.35);
+  transition:transform .9s var(--ease);
+}
+.marque:hover .marque__pic{transform:rotate(120deg)}
+.marque__t{font-family:var(--tf);font-weight:800;font-size:1.15rem;letter-spacing:-.4px;line-height:1}
+.marque__s{display:block;font-family:var(--tc);font-weight:400;font-size:.68rem;color:var(--encre-doux);letter-spacing:.5px}
+.menu{display:flex;align-items:center;gap:1.5rem}
+.menu a{font-size:.88rem;font-weight:500;position:relative;padding:.3rem 0}
+.menu a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--rouge);transition:width .3s var(--ease)}
+.menu a:hover{color:var(--rouge)} .menu a:hover::after{width:100%}
+.menu .bt{padding:.55rem 1.1rem;font-size:.82rem} .menu .bt::after{display:none}
+.burger{display:none;position:relative;width:42px;height:42px;z-index:902}
+.burger span{position:absolute;left:50%;top:50%;width:23px;height:2px;margin:-1px 0 0 -11.5px;
+  background:var(--encre);border-radius:2px;transition:transform .35s var(--ease),opacity .2s,background .2s}
+.burger span:nth-child(1){transform:translateY(-7px)}
+.burger span:nth-child(3){transform:translateY(7px)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg);background:var(--rouge)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg);background:var(--rouge)}
+
+/* ------------------------------------------------------------- BOUTONS */
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.82rem 1.6rem;
+  border-radius:999px;font-weight:600;font-size:.9rem;border:2px solid var(--rouge);background:var(--rouge);color:#fff6ea;
+  transition:background .3s var(--ease),color .3s var(--ease),transform .25s var(--ease),box-shadow .3s var(--ease)}
+.bt:hover{background:var(--rouge-sombre);border-color:var(--rouge-sombre);transform:translateY(-2px);box-shadow:0 10px 22px -12px rgba(125,26,18,.8)}
+.bt--v{background:transparent;color:var(--encre);border-color:rgba(36,26,19,.3)}
+.bt--v:hover{background:rgba(179,42,30,.08);border-color:var(--rouge);color:var(--rouge-sombre);box-shadow:none}
+.bt--p{background:linear-gradient(120deg,var(--pass-a),var(--pass-b));border-color:transparent;color:#fff}
+.bt--p:hover{background:linear-gradient(120deg,var(--pass-b),var(--pass-a));border-color:transparent;color:#fff}
+.bt--s{padding:.48rem 1rem;font-size:.8rem;border-width:1.5px}
+
+/* ------------------------------------------------------------- ACCUEIL */
+.une{position:relative;overflow:hidden;padding:calc(var(--haut) + 3.4rem) 5% 3.2rem;z-index:2}
+/* faisceau du projecteur */
+.une__faisceau{
+  position:absolute;top:-14%;right:6%;width:58vw;height:150%;pointer-events:none;z-index:0;
+  background:linear-gradient(196deg,rgba(242,181,68,.42),rgba(242,181,68,.10) 46%,transparent 72%);
+  clip-path:polygon(50% 0,100% 100%,0 100%);filter:blur(14px);opacity:.9;
+  transform-origin:50% 0;animation:faisceau 9s ease-in-out infinite;
+}
+@keyframes faisceau{0%,100%{transform:rotate(-1.4deg) scaleY(1);opacity:.75}50%{transform:rotate(1.4deg) scaleY(1.03);opacity:1}}
+.une__in{max-width:1180px;margin:0 auto;width:100%;position:relative;z-index:2;
+  display:grid;grid-template-columns:1.12fr .88fr;gap:2.4rem;align-items:center}
+.une__txt{max-width:44rem}
+.billet{
+  display:inline-flex;align-items:center;gap:.55rem;padding:.42rem 1.1rem;margin-bottom:1.5rem;position:relative;
+  background:var(--papier-clair);border:1.5px dashed var(--rouge);border-radius:4px;
+  color:var(--rouge-sombre);font-weight:600;font-size:.8rem;letter-spacing:.3px;
+}
+.billet::before,.billet::after{content:'';position:absolute;top:50%;width:11px;height:11px;border-radius:50%;
+  background:var(--papier);transform:translateY(-50%)}
+.billet::before{left:-6px} .billet::after{right:-6px}
+.une h1{font-family:var(--tf);font-weight:800;letter-spacing:-2.5px;line-height:.86;margin-bottom:.55rem}
+.une h1 .l1{display:block;font-size:clamp(2.6rem,9vw,6.9rem);color:var(--rouge);white-space:nowrap}
+.une h1 .l2{display:block;font-size:clamp(3.4rem,12vw,8.6rem);color:var(--or-clair)}
+@supports (-webkit-text-stroke:2px #000){
+  .une h1 .l2{color:transparent;-webkit-text-stroke:2.5px var(--rouge-sombre)}
+}
+.dates{font-family:var(--tf);font-weight:600;font-size:clamp(1.05rem,2.5vw,1.6rem);margin-bottom:1rem;color:var(--encre)}
+.dates b{color:var(--rouge)}
+.une p.intro{max-width:52ch;color:var(--encre-doux);font-size:clamp(1rem,1.6vw,1.12rem);margin-bottom:1.9rem}
+.une__bt{display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* pile d'affiches du hero */
+.pile{position:relative;height:clamp(300px,34vw,430px);perspective:1100px}
+.pile__a{
+  position:absolute;width:43%;aspect-ratio:2/3;border-radius:10px;overflow:hidden;
+  box-shadow:0 22px 44px -22px rgba(60,26,12,.75),0 0 0 6px var(--papier-clair);
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease);
+}
+.pile__a:nth-child(1){left:0;top:17%;transform:rotate(-8deg)}
+.pile__a:nth-child(2){left:29%;top:0;z-index:3;transform:rotate(1.5deg) scale(1.04)}
+.pile__a:nth-child(3){left:58%;top:15%;transform:rotate(7deg)}
+.pile:hover .pile__a:nth-child(1){transform:rotate(-12deg) translate(-9%,-4%)}
+.pile:hover .pile__a:nth-child(2){transform:rotate(0deg) scale(1.08) translateY(-5%)}
+.pile:hover .pile__a:nth-child(3){transform:rotate(11deg) translate(9%,-4%)}
+.pile__a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:3}
+
+/* ------------------------------------------- PELLICULE DES CHIFFRES */
+.pellicule{
+  max-width:1180px;margin:3rem auto 0;position:relative;z-index:2;border-radius:6px;overflow:hidden;
+  background:linear-gradient(180deg,#2b211a,#1a120d);color:var(--papier-clair);
+  box-shadow:var(--ombre);padding:16px 0;
+}
+.pellicule::before,.pellicule::after{
+  content:'';position:absolute;left:0;width:100%;height:16px;
+  background-image:radial-gradient(circle at 10px 50%,var(--papier) 0 3.6px,transparent 4px);
+  background-size:26px 16px;background-repeat:repeat-x;opacity:.9;
+}
+.pellicule::before{top:0} .pellicule::after{bottom:0}
+.pellicule ul{display:grid;grid-template-columns:repeat(6,1fr)}
+.pellicule li{padding:1.15rem .7rem;text-align:center;border-left:1px solid rgba(243,234,215,.16)}
+.pellicule li:first-child{border-left:none}
+.pellicule b{display:block;font-family:var(--tf);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--or-clair);line-height:1;font-variant-numeric:tabular-nums}
+.pellicule span{font-size:.75rem;color:rgba(243,234,215,.72);letter-spacing:.4px}
+
+/* ------------------------------------------------------------- SECTIONS */
+.sec{padding:5rem 5%;position:relative;z-index:2}
+.sec__tete{max-width:1180px;margin:0 auto 2.4rem}
+.sec__tete h2{font-family:var(--tf);font-weight:800;letter-spacing:-1.2px;font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.04}
+.sec__tete p{color:var(--encre-doux);margin-top:.6rem;max-width:60ch}
+.duo{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1.3rem}
+.bloc{
+  background:var(--papier-clair);border:1px solid var(--trait);border-radius:var(--r);padding:1.6rem;
+  box-shadow:var(--ombre);position:relative;overflow:hidden;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease)
+}
+.bloc::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--rouge);
+  transform:scaleX(.18);transform-origin:0 50%;transition:transform .5s var(--ease)}
+.bloc:hover{transform:translateY(-5px);box-shadow:0 22px 40px -24px rgba(66,38,20,.8)}
+.bloc:hover::before{transform:scaleX(1)}
+.bloc h3{font-family:var(--tf);font-weight:600;font-size:1.12rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.55rem}
+.bloc h3 .ic{color:var(--rouge);font-size:1.15rem}
+.bloc p{color:var(--encre-doux);font-size:.94rem}
+
+/* ------------------------------------------------------------- CINÉMAS */
+.cines{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:1rem}
+.carte-cine{
+  display:flex;flex-direction:column;gap:.18rem;padding:1.3rem 1.3rem 1.5rem;border-radius:var(--r);position:relative;
+  background:var(--papier-clair);border:1px solid var(--trait);box-shadow:var(--ombre);overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)
+}
+.carte-cine::after{content:'';position:absolute;left:1.3rem;bottom:1rem;height:2px;width:22px;background:var(--or);
+  transition:width .4s var(--ease)}
+.carte-cine:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(66,38,20,.85)}
+.carte-cine:hover::after{width:calc(100% - 2.6rem)}
+.carte-cine__ville{font-size:.74rem;color:var(--encre-doux);letter-spacing:.4px}
+.carte-cine__nom{font-family:var(--tf);font-weight:800;font-size:1.3rem;letter-spacing:-.5px;color:var(--rouge-sombre)}
+.carte-cine__nb{font-size:.8rem;color:var(--encre-doux);font-weight:600;margin-top:.25rem}
+
+/* ------------------------------------------------------------- PROGRAMME */
+/* la salle s'éteint : bandeau velours */
+#programme{
+  background:linear-gradient(180deg,var(--velours-nuit),var(--velours) 12%,var(--velours) 88%,var(--velours-nuit));
+  color:#fbeede;margin:0 0 1rem;
+}
+#programme::before{
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(90deg,rgba(0,0,0,.20) 0 2px,rgba(255,255,255,.05) 2px 26px,rgba(0,0,0,.14) 26px 44px);
+  mask-image:linear-gradient(180deg,#000,transparent 22%,transparent 78%,#000);
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 22%,transparent 78%,#000);
+}
+#programme>*{position:relative;z-index:1}
+#programme .sec__tete h2{color:#fff3e2}
+#programme .sec__tete p{color:rgba(255,240,224,.78)}
+.onglets{max-width:1180px;margin:0 auto 1.2rem;display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.45rem;scrollbar-width:thin}
+.onglet{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;
+  padding:.62rem 1.05rem;border-radius:10px;border:1px solid rgba(255,240,224,.28);background:rgba(0,0,0,.16);
+  color:#fbeede;transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease),transform .25s var(--ease)}
+.onglet span{font-family:var(--tf);font-weight:600;font-size:.95rem}
+.onglet small{font-size:.68rem;opacity:.72}
+.onglet:hover{border-color:var(--or-clair);transform:translateY(-2px)}
+.onglet[aria-selected="true"]{background:var(--or-clair);border-color:var(--or-clair);color:#2b1a06}
+.onglet[aria-selected="true"] small{opacity:.78}
+
+.filtres{max-width:1180px;margin:0 auto 1.5rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+/* message affiché seulement si programme.csv pose problème : invisible sinon */
+.alerte-csv{max-width:1180px;margin:0 auto 1.5rem;padding:.9rem 1.1rem;border-radius:12px;
+  background:rgba(242,181,68,.12);border:1px solid rgba(242,181,68,.45);color:#ffe7b4;font-size:.85rem;line-height:1.5}
+.alerte-csv b{display:block;font-family:var(--tf);font-weight:700;font-size:.92rem;color:#ffd98e;margin-bottom:.2rem;opacity:1}
+.alerte-csv span{opacity:.85}
+.filtres b{font-size:.78rem;opacity:.8;font-weight:500;margin-right:.3rem}
+.fj{padding:.34rem .8rem;border-radius:999px;border:1px solid rgba(255,240,224,.26);background:transparent;
+  font-size:.78rem;color:rgba(255,240,224,.85);transition:background .22s var(--ease),border-color .22s var(--ease),color .22s var(--ease)}
+.fj:hover{color:#fff;border-color:var(--or-clair)}
+.fj[aria-pressed="true"]{background:rgba(242,181,68,.2);border-color:var(--or-clair);color:#ffdf9f;font-weight:600}
+
+.panneau{max-width:1180px;margin:0 auto}
+.panneau[hidden]{display:none}
+.panneau.entre{animation:entre .45s var(--ease) both}
+@keyframes entre{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.salle-tete{display:grid;grid-template-columns:1.3fr 1fr;gap:1.3rem;align-items:start;
+  padding:1.5rem;border-radius:var(--r);border:1px solid rgba(255,240,224,.22);
+  background:linear-gradient(140deg,rgba(0,0,0,.32),rgba(0,0,0,.14));margin-bottom:1.6rem}
+.salle-tete__ville{font-size:.78rem;color:var(--or-clair);letter-spacing:.6px}
+.salle-tete__nom{font-family:var(--tf);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-1px;line-height:1.05;color:#fff4e5}
+.salle-tete__infos{color:rgba(255,240,224,.78);font-size:.88rem;margin-top:.35rem}
+.salle-tete__meta p{display:flex;gap:.55rem;align-items:flex-start;font-size:.88rem;color:rgba(255,240,224,.86);margin-bottom:.45rem}
+.salle-tete__meta .ic{color:var(--or-clair);margin-top:.25rem}
+.salle-tete__meta a:hover{color:var(--or-clair);text-decoration:underline}
+.salle-tete__nb b{color:var(--or-clair);font-size:1.05rem}
+.salle-tete__liens{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.5rem}
+.salle-tete .bt--v{color:#fff4e5;border-color:rgba(255,240,224,.4)}
+.salle-tete .bt--v:hover{background:rgba(242,181,68,.16);border-color:var(--or-clair);color:#ffe3a8}
+
+.jours{display:grid;gap:1rem}
+.jour{border-radius:var(--r);overflow:hidden;background:var(--papier-clair);color:var(--encre);
+  box-shadow:0 18px 34px -26px rgba(0,0,0,.9)}
+.jour[hidden]{display:none}
+.jour__titre{display:flex;align-items:baseline;gap:.6rem;padding:.8rem 1.2rem;
+  background:linear-gradient(90deg,rgba(215,138,12,.26),rgba(215,138,12,.04));border-bottom:1px solid var(--trait)}
+.jour__titre span{font-family:var(--tf);font-weight:800;font-size:1.05rem;letter-spacing:-.3px}
+.jour__titre b{font-weight:400;font-size:.82rem;color:var(--encre-doux)}
+.seances{display:grid}
+.seance{display:grid;grid-template-columns:78px 1fr;gap:.9rem;align-items:baseline;
+  padding:.7rem 1.2rem;border-top:1px solid var(--trait);transition:background .2s ease,padding-left .25s var(--ease)}
+.seance:first-child{border-top:none}
+.seance:hover{background:rgba(215,138,12,.10);padding-left:1.45rem}
+.seance__h{font-family:var(--tf);font-weight:600;font-size:.98rem;color:var(--rouge-sombre);font-variant-numeric:tabular-nums}
+.seance__t{font-size:.96rem}
+.seance--stage{background:rgba(31,74,56,.09)}
+.seance--stage .seance__h{color:var(--foret)}
+.tags{display:inline-flex;flex-wrap:wrap;gap:.35rem;margin-left:.45rem;vertical-align:middle}
+.tag{display:inline-block;padding:.08rem .5rem;border-radius:999px;font-size:.67rem;font-weight:600;letter-spacing:.2px;
+  border:1px solid currentColor;white-space:nowrap}
+.tag--salle{color:var(--encre-doux)} .tag--sn{color:#9a6403} .tag--avp{color:var(--rouge)}
+.tag--vost{color:#2e5c9a} .tag--cj{color:var(--foret)} .tag--renc{color:#7a3b93}
+/* interdiction aux mineurs ou avertissement : pastille pleine, bien visible */
+.tag--int{color:#fff6ea;background:var(--encre);border-color:var(--encre)}
+.film__int{font-size:.7rem;font-weight:700;color:var(--rouge-sombre)}
+.legende{max-width:1180px;margin:1.5rem auto 0;display:flex;flex-wrap:wrap;gap:.9rem;font-size:.78rem;color:rgba(255,240,224,.8)}
+.legende b{color:#ffd98e}
+
+
+/* ---------------------------------------------- RÉSEAUX CINÉS-PAYS */
+.une__suivre{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;margin-top:1.4rem;font-size:.84rem;color:var(--encre-doux)}
+.une__suivre a{display:inline-flex;align-items:center;gap:.45rem;padding:.42rem .9rem .42rem .5rem;border-radius:999px;
+  background:var(--papier-clair);border:1px solid var(--trait);color:var(--encre);font-weight:600;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.une__suivre a:hover{transform:translateY(-2px);border-color:rgba(36,26,19,.35)}
+.une__suivre .pastille{width:1.7rem;height:1.7rem;font-size:.95rem}
+.pastille{display:inline-grid;place-items:center;border-radius:50%;color:#fff;flex:none}
+.pastille--ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.pastille--fb{background:#1877f2}
+.pastille--fb .ic{fill:currentColor;stroke:none}
+
+#reseaux{padding-top:1rem}
+.reseaux{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:2rem;align-items:center;
+  padding:2.4rem clamp(1.4rem,4vw,3rem);border-radius:calc(var(--r) + 6px);
+  background:linear-gradient(135deg,var(--velours),var(--velours-nuit));color:#fff3e2;
+  box-shadow:0 30px 60px -34px rgba(93,19,14,.9);position:relative;overflow:hidden}
+.reseaux::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px 300px at 90% -20%,rgba(242,181,68,.28),transparent 70%)}
+.reseaux__txt{position:relative}
+.reseaux__txt h2{font-family:var(--tf);font-weight:800;letter-spacing:-1px;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.04}
+.reseaux__txt p{margin-top:.7rem;color:rgba(255,240,224,.8);max-width:42ch}
+.reseaux__cartes{position:relative;display:grid;gap:.9rem}
+.rs{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;padding:1rem 1.2rem;border-radius:var(--r);
+  background:var(--papier-clair);color:var(--encre);position:relative;
+  box-shadow:0 16px 30px -20px rgba(0,0,0,.7);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.rs:hover{transform:translateY(-3px) rotate(-.4deg);box-shadow:0 24px 38px -20px rgba(0,0,0,.8)}
+.rs .pastille{width:3rem;height:3rem;font-size:1.5rem;border-radius:14px}
+.rs__nom{font-family:var(--tf);font-weight:800;font-size:1.15rem;line-height:1.1}
+.rs__id{display:block;font-size:.84rem;color:var(--encre-doux);margin-top:.15rem;overflow-wrap:anywhere}
+.rs__go{padding:.5rem 1rem;border-radius:999px;font-weight:600;font-size:.84rem;color:#fff;white-space:nowrap}
+.rs--ig .rs__go{background:#d6249f} .rs--fb .rs__go{background:#1877f2}
+.pied-bas .bt--rs{gap:.45rem}
+.une__suivre a:focus-visible,.rs:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+@media (max-width:820px){
+  .reseaux{grid-template-columns:1fr;gap:1.4rem;padding:2rem 1.3rem}
+}
+@media (max-width:420px){
+  .rs{grid-template-columns:auto 1fr;gap:.8rem}
+  .rs__go{grid-column:1 / -1;text-align:center}
+}
+
+/* ------------------------------------------------------------- FILMS */
+.films{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(152px,1fr));gap:1.3rem 1.1rem}
+.film__aff{position:relative;aspect-ratio:2/3;border-radius:9px;overflow:hidden;background:#221a14;
+  box-shadow:0 14px 26px -16px rgba(60,26,12,.85),0 0 0 1px rgba(36,26,19,.12);
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.film{position:relative}
+.film[hidden]{display:none}
+.film__aff{transform:perspective(800px) translateY(var(--ty,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.film__aff.suit{transition:transform .09s linear,box-shadow .4s var(--ease)}
+.film:hover .film__aff,.film:focus-within .film__aff{--ty:-8px;box-shadow:0 30px 44px -18px rgba(0,0,0,.95),0 0 0 2px var(--ampoule)}
+.film__aff img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:3;background:#221a14}
+/* affiche dessinée, visible tant qu'aucun fichier n'est fourni.
+   Six encres d'affiche : rideau, forêt, nuit, ocre, aubergine, sarcelle. */
+.affiche{--a:#a52720;--b:#4a0f0c;--c:#ffd9a8;
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:.8rem .75rem;overflow:hidden;background:linear-gradient(165deg,var(--a),var(--b))}
+.affiche[data-pal="2"]{--a:#1f4a38;--b:#0c2019;--c:#a8e6c4}
+.affiche[data-pal="3"]{--a:#26406b;--b:#101d33;--c:#bfd9ff}
+.affiche[data-pal="4"]{--a:#8a4a12;--b:#3a1c07;--c:#ffd98e}
+.affiche[data-pal="5"]{--a:#4d2a5e;--b:#1e1029;--c:#e9c2ff}
+.affiche[data-pal="6"]{--a:#10514f;--b:#062726;--c:#a2e9e0}
+.affiche::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(85% 52% at 50% 6%,rgba(255,255,255,.20),transparent 72%)}
+.affiche__init{position:absolute;left:-.1em;bottom:-.22em;font-family:var(--tf);font-weight:800;
+  font-size:8.5rem;line-height:.8;color:rgba(255,255,255,.1)}
+.affiche__t{position:relative;font-family:var(--tf);font-weight:800;line-height:1.08;letter-spacing:-.3px;
+  font-size:var(--fs,1.1rem);color:var(--c);text-wrap:balance}
+.affiche__p{position:relative;margin-top:.5rem;padding-top:.45rem;font-size:.58rem;letter-spacing:.7px;
+  color:rgba(255,255,255,.72);border-top:1px solid rgba(255,255,255,.3);
+  border-top-color:color-mix(in srgb,var(--c) 45%,transparent)}
+.affiche__chip{position:absolute;top:.6rem;left:.6rem;padding:.14rem .5rem;border-radius:999px;
+  background:var(--c);color:#1c1108;font-size:.56rem;font-weight:700;letter-spacing:.2px}
+/* balayage de projecteur au survol */
+.film__aff::after{content:'';position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);
+  transform:translateX(-60%);transition:transform .8s var(--ease),opacity .4s ease}
+.film:hover .film__aff::after{opacity:1;transform:translateX(60%)}
+.film figcaption{display:flex;flex-direction:column;gap:.1rem;padding:.6rem .15rem 0}
+.film__nom{font-size:.85rem;font-weight:600;line-height:1.25}
+.film__nb{font-size:.73rem;color:var(--encre-doux)}
+
+/* ------------------------------------------------------------- ANIMATIONS */
+.anim{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(296px,1fr));gap:1.3rem}
+.anim .bloc::before{background:var(--foret)}
+.anim .bloc h3 .ic{color:var(--foret)}
+.anim ul{display:grid;gap:.55rem;margin-top:1rem}
+.anim li{display:grid;gap:.05rem;padding:.6rem .8rem;border-radius:10px;background:rgba(31,74,56,.07);
+  border-left:3px solid rgba(31,74,56,.45)}
+.anim li b{font-size:.92rem;font-weight:600}
+.anim li span{font-size:.79rem;color:var(--encre-doux)}
+.anim li em{font-style:normal;font-size:.78rem;color:var(--rouge-sombre);font-weight:600}
+
+/* ------------------------------------------------------------- TARIFS */
+.tarifs{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:1.4rem;align-items:start}
+.prix{display:grid;gap:.75rem}
+/* chaque tarif est un billet perforé */
+.prix li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.95rem 1.5rem;
+  position:relative;background:var(--papier-clair);border:1px solid var(--trait);border-radius:10px;
+  box-shadow:var(--ombre);transition:transform .3s var(--ease)}
+.prix li::before,.prix li::after{content:'';position:absolute;top:50%;width:14px;height:14px;border-radius:50%;
+  background:var(--papier);box-shadow:inset 0 0 0 1px var(--trait);transform:translateY(-50%)}
+.prix li::before{left:-7px} .prix li::after{right:-7px}
+.prix li:hover{transform:translateX(4px)}
+.prix li b{font-family:var(--tf);font-weight:600;font-size:1rem}
+.prix li span{color:var(--encre-doux);font-size:.8rem;display:block;font-weight:400;font-family:var(--tc)}
+.prix li em{font-style:normal;font-family:var(--tf);font-weight:800;font-size:1.3rem;color:var(--rouge);white-space:nowrap}
+.prix li em.prix__txt{font-size:.9rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+.pass{padding:1.7rem;border-radius:var(--r);color:#fff;
+  background:linear-gradient(135deg,var(--pass-a),var(--pass-b) 72%,#4b1670);box-shadow:0 20px 38px -22px rgba(90,20,120,.9)}
+.pass h3{font-family:var(--tf);font-weight:800;font-size:1.35rem;margin-bottom:.5rem}
+.pass p{color:rgba(255,255,255,.88);font-size:.92rem;margin-bottom:1.1rem}
+.carte-pass{width:100%;max-width:248px;aspect-ratio:1.586/1;border-radius:14px;padding:1rem 1.15rem;margin-bottom:1.1rem;
+  background:linear-gradient(140deg,#fff,rgba(255,255,255,.82));box-shadow:0 16px 30px rgba(40,6,60,.4);
+  display:flex;flex-direction:column;justify-content:space-between;color:#3b0d55;position:relative;overflow:hidden;
+  transition:transform .4s var(--ease)}
+.carte-pass:hover{transform:translateY(-4px) rotate(-1.4deg)}
+.carte-pass::after{content:'';position:absolute;right:-38px;bottom:-50px;width:135px;height:135px;border-radius:50%;background:rgba(138,43,226,.14)}
+.carte-pass svg{width:30px;height:30px;position:relative;z-index:1}
+.carte-pass__m{position:relative;z-index:1;font-family:var(--tf);font-weight:800;font-size:1.3rem;line-height:1.02}
+.carte-pass__m span{display:block;font-weight:400;font-size:1.05rem}
+.carte-pass__p{position:relative;z-index:1;font-size:.62rem;letter-spacing:.8px;opacity:.85}
+.pass .bt--p{background:#fff;color:#5b1180;border-color:#fff}
+.pass .bt--p:hover{background:#f6e6ff;color:#4a0d69;border-color:#f6e6ff}
+
+/* ------------------------------------------------------------- PIED */
+footer{background:var(--foret-nuit);color:#e7f0e8;padding:3rem 5% 2rem;position:relative;z-index:2}
+.pied{max-width:1180px;margin:0 auto 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:1.5rem}
+.pied h4{font-family:var(--tf);font-weight:600;font-size:.98rem;margin-bottom:.5rem;color:var(--or-clair)}
+.pied p,.pied a{font-size:.82rem;color:rgba(231,240,232,.76);display:block;margin-bottom:.2rem}
+.pied a{text-decoration:underline;text-decoration-color:rgba(242,181,68,.4);text-underline-offset:3px}
+.pied a:hover{color:var(--or-clair)}
+.pied-bas{max-width:1180px;margin:0 auto;padding-top:1.3rem;border-top:1px solid rgba(231,240,232,.16);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.pied-bas p{font-size:.78rem;color:rgba(231,240,232,.7)}
+.pied-legal{max-width:1180px;margin:1rem auto 0;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.78rem}
+.pied-legal a{color:rgba(231,240,232,.76);text-decoration:underline;text-decoration-color:rgba(242,181,68,.4);text-underline-offset:3px}
+.pied-legal a:hover{color:var(--or-clair)}
+.pied-bas nav{display:flex;flex-wrap:wrap;gap:.5rem}
+.pied-bas .bt--v{color:#e7f0e8;border-color:rgba(231,240,232,.35)}
+.pied-bas .bt--v:hover{background:rgba(242,181,68,.14);border-color:var(--or-clair);color:var(--or-clair)}
+
+#haut{position:fixed;right:20px;bottom:20px;z-index:800;width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;background:var(--rouge);color:#fff6ea;opacity:0;pointer-events:none;
+  transition:opacity .3s var(--ease),transform .3s var(--ease);box-shadow:0 10px 22px -10px rgba(125,26,18,.9)}
+#haut.vu{opacity:1;pointer-events:auto} #haut:hover{transform:translateY(-3px)}
+
+/* ------------------------------------------------------------- APPARITIONS */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.reveal.dedans{opacity:1;transform:none}
+
+/* ------------------------------------------------------------- MOBILE */
+@media (max-width:1000px){
+  .une__in{grid-template-columns:1fr;gap:2rem}
+  .pile{height:300px;max-width:440px}
+  .pellicule ul{grid-template-columns:repeat(3,1fr)}
+  .pellicule li:nth-child(4){border-left:none}
+  .pellicule li:nth-child(n+4){border-top:1px solid rgba(243,234,215,.16)}
+}
+@media (max-width:900px){
+  .salle-tete{grid-template-columns:1fr}
+  .tarifs{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  :root{--haut:62px;--haut-colle:60px}
+  section[id]{scroll-margin-top:-1rem}
+  .burger{display:block}
+  .menu{position:fixed;inset:0;z-index:901;flex-direction:column;justify-content:center;gap:1.7rem;
+    background:rgba(251,245,232,.98);backdrop-filter:blur(12px);transform:translateX(100%);opacity:0;visibility:hidden;
+    transition:transform .4s var(--ease),opacity .25s,visibility .25s}
+  .menu.ouvert{transform:none;opacity:1;visibility:visible}
+  .menu a{font-size:1.18rem}
+  .sec{padding:3.6rem 5%}
+  .une{padding-top:calc(var(--haut) + 2.2rem)}
+  .seance{grid-template-columns:62px 1fr;gap:.6rem;padding:.65rem .85rem}
+  .seance:hover{padding-left:.85rem}
+  .films{grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:1rem .7rem}
+  .affiche__init{font-size:6rem}
+  .affiche__t{font-size:calc(var(--fs,1rem) * .8)}
+  .affiche{padding:.65rem .6rem}
+  .pile{display:none}
+  .une__faisceau{width:130vw;right:-26%;opacity:.42;filter:blur(26px)}
+}
+@media (max-width:520px){
+  .films{grid-template-columns:repeat(auto-fill,minmax(101px,1fr));gap:.9rem .55rem}
+  .affiche{padding:.5rem .45rem}
+  .affiche__t{font-size:calc(var(--fs,1rem) * .68)}
+  .affiche__p{font-size:.5rem;letter-spacing:.4px;margin-top:.35rem;padding-top:.3rem}
+  .affiche__chip{top:.4rem;left:.4rem;font-size:.48rem;padding:.1rem .38rem}
+  .affiche__init{font-size:4.6rem}
+  .film__nom{font-size:.78rem} .film__nb{font-size:.68rem}
+  .pellicule ul{grid-template-columns:repeat(2,1fr)}
+  .pellicule li:nth-child(odd){border-left:none}
+  .pellicule li:nth-child(n+3){border-top:1px solid rgba(243,234,215,.16)}
+  .prix li{padding:.9rem 1.2rem;flex-wrap:wrap}
+}
+
+/* ------------------------------------------------------------- IMPRESSION */
+@media print{
+  body{background:#fff;color:#000} body::after,.une__faisceau,.progression,#haut,.bandeau,.pile{display:none!important}
+  .sec,#programme{padding:0 0 1.2rem;background:#fff!important;color:#000!important;margin:0}
+  #programme::before{display:none}
+  #programme .sec__tete h2,#programme .sec__tete p,.legende,.salle-tete__nom,.salle-tete__meta p{color:#000!important}
+  .onglets,.filtres{display:none}
+  .panneau[hidden]{display:block!important}
+  .jour,.bloc,.prix li,.salle-tete{box-shadow:none!important;border:1px solid #999!important;background:#fff!important;break-inside:avoid}
+  .reveal{opacity:1!important;transform:none!important}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.7em;color:#555}
+}
+
+/* ------------------------------------------------------------- MOUVEMENT RÉDUIT */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .une__faisceau{animation:none}
+}
+
+
+/* ================================================== FONDS « SALLE DE CINÉMA » */
+:root{--drape:clamp(20px,6vw,96px)}
+.bandeau:not(.colle){padding-left:max(5%,calc(var(--drape) + 1rem));padding-right:max(5%,calc(var(--drape) + 1rem))}
+/* rideaux de velours de part et d'autre de l'accueil */
+.une{padding-left:max(5%,calc(var(--drape) + 1.2rem));padding-right:max(5%,calc(var(--drape) + 1.2rem))}
+.une__drape{position:absolute;top:0;bottom:0;width:var(--drape);z-index:3;pointer-events:none;transform-origin:50% 0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.4),transparent 22%,transparent 72%,rgba(0,0,0,.5)),
+    repeating-linear-gradient(90deg,#4a0f0b 0,#8a2119 12px,#b3372a 19px,#8a2119 28px,#4a0f0b 38px);
+  animation:drape 7s ease-in-out infinite alternate}
+.une__drape--g{left:0;border-bottom-right-radius:100% 26%;box-shadow:10px 0 26px -8px rgba(40,8,4,.55)}
+.une__drape--d{right:0;border-bottom-left-radius:100% 26%;box-shadow:-10px 0 26px -8px rgba(40,8,4,.55);animation-delay:-3.5s}
+/* embrasse dorée */
+.une__drape::after{content:'';position:absolute;left:-10%;right:-10%;top:58%;height:14px;border-radius:7px;
+  background:linear-gradient(180deg,#f2b544,#b36d06);box-shadow:0 4px 8px rgba(0,0,0,.35)}
+@keyframes drape{to{transform:scaleX(1.07)}}
+/* rampe lumineuse au pied de la scène */
+.une::after{content:'';position:absolute;left:0;right:0;bottom:0;height:140px;pointer-events:none;z-index:0;
+  background:radial-gradient(60% 100% at 50% 100%,rgba(242,181,68,.28),transparent 70%)}
+
+/* projecteurs croisés sur les sections claires */
+#festival::before,#animations::before,#tarifs::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(520px 420px at 8% 0,rgba(242,181,68,.20),transparent 70%),
+    radial-gradient(520px 420px at 92% 0,rgba(179,42,30,.11),transparent 70%)}
+
+/* LES CINÉMAS : une vraie salle, rangées de fauteuils rouges en bas */
+#cinemas{color:#f6ead6;padding-bottom:10rem;
+  background:
+    radial-gradient(900px 340px at 50% -40px,rgba(255,232,180,.20),transparent 70%),
+    linear-gradient(180deg,#2c0e0a,#1a0806 70%,#120504)}
+#cinemas .sec__tete h2{color:#fff3e2}
+#cinemas .sec__tete p{color:rgba(255,240,224,.75)}
+#cinemas::after{content:'';position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 22px 34px at 50% 100%,#6d1710 96%,transparent 100%) 0 100%/54px 46px repeat-x,
+    radial-gradient(ellipse 18px 28px at 50% 100%,#521009 96%,transparent 100%) 27px calc(100% - 40px)/46px 40px repeat-x,
+    radial-gradient(ellipse 15px 23px at 50% 100%,#3d0b07 96%,transparent 100%) 0 calc(100% - 76px)/40px 32px repeat-x,
+    linear-gradient(180deg,transparent,rgba(0,0,0,.35))}
+#cinemas .cines{position:relative;z-index:1}
+#cinemas .carte-cine{border-color:rgba(242,181,68,.35);box-shadow:0 0 0 1px rgba(242,181,68,.12),0 18px 34px -18px rgba(0,0,0,.9)}
+#cinemas .carte-cine:hover{box-shadow:0 0 0 2px var(--or-clair),0 26px 44px -20px rgba(0,0,0,.95)}
+
+@media (max-width:820px){
+  .une{padding-left:calc(var(--drape) + 1.1rem);padding-right:calc(var(--drape) + 1.1rem)}
+  .une__drape::after{height:10px}
+  #cinemas{padding-bottom:8rem}
+}
+@media (prefers-reduced-motion:reduce){ .une__drape{animation:none} }
+@media print{ .une__drape,.une::after,#cinemas::after{display:none!important} #cinemas{background:none;color:#000} }
+
+/* ================================================== THÈME CINÉMA */
+/* lever de rideau à l'ouverture de la page (une seule fois, sans JS) */
+.rideau{position:fixed;inset:0;z-index:2000;pointer-events:none;display:flex;animation:rideau-fin 0s 1.9s forwards}
+.rideau span{flex:1;position:relative;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.45),transparent 18%,transparent 80%,rgba(0,0,0,.55)),
+    repeating-linear-gradient(90deg,#4a0f0b 0,#8a2119 18px,#b3372a 30px,#8a2119 44px,#4a0f0b 60px)}
+.rideau span::after{content:'';position:absolute;left:0;right:0;bottom:0;height:22px;
+  background:repeating-linear-gradient(90deg,#d78a0c 0 6px,#f2b544 6px 10px);opacity:.9}
+.rideau span:first-child{animation:rideau-g 1.25s .45s cubic-bezier(.7,0,.25,1) forwards;box-shadow:12px 0 30px rgba(0,0,0,.5)}
+.rideau span:last-child{animation:rideau-d 1.25s .45s cubic-bezier(.7,0,.25,1) forwards;box-shadow:-12px 0 30px rgba(0,0,0,.5)}
+@keyframes rideau-g{to{transform:translateX(-102%)}}
+@keyframes rideau-d{to{transform:translateX(102%)}}
+@keyframes rideau-fin{to{visibility:hidden}}
+
+/* le faisceau suit doucement la souris, avec des poussières dans la lumière */
+.une__faisceau{rotate:var(--incl,0deg);transition:rotate 1.4s var(--ease)}
+.une__poussiere{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+
+/* compte à rebours façon billetterie */
+.decompte[hidden]{display:none}
+.decompte{display:inline-flex;align-items:center;flex-wrap:wrap;gap:.55rem;margin:-.6rem 0 1.4rem;padding:.45rem .7rem .45rem .9rem;
+  border-radius:10px;background:var(--encre);color:#fbeede;font-size:.82rem;box-shadow:0 12px 24px -16px rgba(36,26,19,.9)}
+.decompte__rec{width:.55rem;height:.55rem;border-radius:50%;background:#ff4b3a;box-shadow:0 0 0 3px rgba(255,75,58,.25);animation:rec 1.6s ease-in-out infinite}
+@keyframes rec{50%{opacity:.25}}
+.decompte__n{display:inline-flex;gap:.3rem}
+.decompte__n span{display:inline-flex;align-items:baseline;gap:.15rem;padding:.12rem .4rem;border-radius:6px;background:rgba(255,255,255,.08)}
+.decompte__n b{font-family:var(--tf);font-weight:800;font-size:1.05rem;color:var(--or-clair);font-variant-numeric:tabular-nums}
+.decompte__n small{font-size:.68rem;opacity:.7}
+
+/* LES FILMS : la salle s'éteint, les affiches s'allument */
+#films{background:
+    radial-gradient(900px 320px at 50% -60px,rgba(255,232,180,.22),transparent 70%),
+    radial-gradient(700px 500px at 0% 100%,rgba(138,33,25,.28),transparent 70%),
+    linear-gradient(180deg,var(--nuit-2),var(--nuit) 45%,var(--nuit-2));
+  color:#f6ead6;padding-top:6.2rem;padding-bottom:6.2rem}
+/* bords de pellicule perforée en haut et en bas de la salle */
+#films::before,#films::after{content:'';position:absolute;left:0;right:0;height:26px;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 12px,rgba(243,234,215,.85) 12px 24px,transparent 24px 34px) center/100% 9px no-repeat,#0b0706}
+#films::before{top:0} #films::after{bottom:0}
+#films .sec__tete p{color:rgba(255,240,224,.72)}
+#films .film__nom{color:#f6ead6}
+#films .film__nb{color:rgba(255,240,224,.6)}
+#films .film__aff{box-shadow:0 18px 30px -16px rgba(0,0,0,.95),0 0 0 1px rgba(255,240,224,.1)}
+
+/* titre en marquise lumineuse */
+.marquise{display:inline-block;position:relative;padding:.75rem 1.4rem .85rem;margin:.4rem 0 .9rem;border-radius:14px;
+  background:linear-gradient(180deg,#2e1d12,#1d120b);color:#fff3e2;box-shadow:0 0 40px -10px rgba(255,190,90,.45)}
+.marquise::before{content:'';position:absolute;inset:-9px;border-radius:20px;padding:9px;pointer-events:none;
+  background:radial-gradient(circle,var(--ampoule) 0 2.6px,rgba(255,217,142,.18) 3.4px,transparent 4.2px) 0 0/17px 17px,#4a2c16;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  filter:drop-shadow(0 0 3px rgba(255,200,110,.9));animation:ampoules 1.4s steps(1) infinite}
+@keyframes ampoules{50%{background-position:8.5px 8.5px,0 0}}
+
+/* outils : filtres + recherche */
+.films-outils{max-width:1180px;margin:0 auto 1.8rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;justify-content:space-between}
+.puces{display:flex;flex-wrap:wrap;gap:.45rem}
+.puce{padding:.45rem .95rem;border-radius:999px;border:1px solid rgba(255,240,224,.28);background:rgba(255,255,255,.04);
+  color:rgba(255,240,224,.88);font-size:.82rem;font-weight:500;transition:background .22s var(--ease),border-color .22s var(--ease),color .22s var(--ease)}
+.puce:hover{border-color:var(--ampoule);color:#fff}
+.puce[aria-pressed="true"]{background:var(--ampoule);border-color:var(--ampoule);color:#2b1a06;font-weight:600}
+.puce small{opacity:.7;margin-left:.25rem;font-weight:500}
+.cherche{display:flex;align-items:center;gap:.5rem;flex:1 1 230px;max-width:320px;padding:.2rem .35rem .2rem .85rem;border-radius:999px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,240,224,.25);color:rgba(255,240,224,.7)}
+.cherche:focus-within{border-color:var(--ampoule);background:rgba(255,255,255,.1)}
+.cherche input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff3e2;font:inherit;font-size:.88rem;padding:.45rem 0}
+.cherche input::placeholder{color:rgba(255,240,224,.5)}
+.films-nb{font-size:.8rem;color:rgba(255,240,224,.6);width:100%;margin-top:-.2rem}
+.films-vide{max-width:1180px;margin:0 auto;padding:2.5rem 1rem;text-align:center;color:rgba(255,240,224,.75);
+  border:1px dashed rgba(255,240,224,.25);border-radius:var(--r)}
+
+/* bouton invisible qui rend toute la carte cliquable */
+.film__ouvrir{position:absolute;inset:0;z-index:6;border:0;background:transparent;cursor:pointer;border-radius:9px}
+.film__ouvrir:focus-visible{outline:3px solid var(--ampoule);outline-offset:4px}
+.film__reflet{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity .3s ease;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.38),transparent 55%);mix-blend-mode:soft-light}
+.film:hover .film__reflet{opacity:1}
+.film__voir{position:absolute;left:50%;bottom:.7rem;z-index:5;transform:translate(-50%,8px);opacity:0;pointer-events:none;
+  padding:.3rem .75rem;border-radius:999px;background:rgba(19,13,10,.82);color:var(--ampoule);font-size:.72rem;font-weight:600;white-space:nowrap;
+  backdrop-filter:blur(4px);transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.film:hover .film__voir,.film:focus-within .film__voir{opacity:1;transform:translate(-50%,0)}
+
+/* fiche film (fenêtre) */
+.fiche{border:0;padding:0;margin:auto;width:min(760px,calc(100% - 1.6rem));max-height:88vh;border-radius:18px;overflow:hidden;
+  background:var(--papier-clair);color:var(--encre);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.fiche::backdrop{background:rgba(12,8,6,.72);backdrop-filter:blur(3px)}
+.fiche[open]{animation:fiche-in .35s var(--ease)}
+@keyframes fiche-in{from{opacity:0;transform:translateY(18px) scale(.98)}}
+.fiche__in{display:grid;grid-template-columns:210px 1fr;max-height:88vh}
+.fiche__aff{position:relative;background:#221a14;aspect-ratio:2/3;align-self:start;margin:1.2rem 0 1.2rem 1.2rem;border-radius:10px;overflow:hidden;box-shadow:0 16px 30px -16px rgba(0,0,0,.7)}
+.fiche__aff img,.fiche__aff .affiche{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fiche__txt{padding:1.6rem 1.6rem 1.4rem;overflow-y:auto;overscroll-behavior:contain}
+.fiche__txt h3{font-family:var(--tf);font-weight:800;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.08;letter-spacing:-.5px;padding-right:2.4rem}
+.fiche__resume{margin:.5rem 0 1rem;color:var(--encre-doux);font-size:.88rem}
+.fiche__resume .tag{margin-right:.3rem}
+.fiche__jour{font-family:var(--tf);font-weight:600;font-size:.92rem;color:var(--rouge);margin:1rem 0 .35rem;padding-bottom:.25rem;border-bottom:1px solid var(--trait)}
+.fiche__ligne{display:grid;grid-template-columns:3.4rem 1fr auto;gap:.6rem;align-items:center;padding:.45rem 0;border-bottom:1px dashed var(--trait);font-size:.86rem}
+.fiche__ligne b{font-family:var(--tf);font-weight:800;color:var(--encre)}
+.fiche__ligne .tags{margin-left:.3rem}
+.fiche__ligne small{color:var(--encre-doux)}
+.fiche__go{padding:.32rem .7rem;border-radius:999px;border:1px solid var(--rouge);color:var(--rouge);background:transparent;font-size:.74rem;font-weight:600;white-space:nowrap}
+.fiche__go:hover{background:var(--rouge);color:#fff6ea}
+/* « Où acheter sa place ? » — bloc d'aide en bas de la fiche, pensé pour les
+   spectateurs qui ne savent pas où réserver : une phrase claire, puis un
+   bouton par cinéma qui projette ce film. */
+.fiche__ou{margin-top:1.3rem;padding:.95rem 1.1rem;border-radius:12px;
+  background:rgba(179,42,30,.06);border:1px solid rgba(179,42,30,.22)}
+.fiche__ou h4{display:flex;align-items:center;gap:.45rem;font-family:var(--tf);font-weight:800;
+  font-size:.95rem;color:var(--rouge-sombre);margin:0 0 .35rem}
+.fiche__ou h4 .ic{font-size:1.05rem;flex:none}
+.fiche__ou p{font-size:.84rem;line-height:1.5;color:var(--encre-doux);margin:0}
+.fiche__ou .fiche__salles{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.75rem}
+.fiche__ou .fiche__salles a{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;
+  border-radius:999px;border:1.5px solid var(--rouge);color:var(--rouge);background:var(--papier-clair);
+  font-size:.78rem;font-weight:600;line-height:1.2}
+.fiche__ou .fiche__salles a:hover{background:var(--rouge);color:#fff6ea}
+.fiche__ou .fiche__salles .ic{font-size:.9rem;flex:none}
+.fiche__ou .fiche__sansliens{margin-top:.6rem;font-size:.79rem;font-style:italic}
+.fiche__fermer{position:absolute;top:.8rem;right:.8rem;z-index:3;width:2.3rem;height:2.3rem;border-radius:50%;border:0;
+  background:var(--encre);color:#fff3e2;font-size:1.3rem;line-height:1;display:grid;place-items:center}
+.fiche__fermer:hover{background:var(--rouge)}
+@media (max-width:640px){
+  .fiche__in{grid-template-columns:1fr}
+  .fiche__aff{width:110px;margin:1.1rem 0 0 1.1rem}
+  .fiche{overflow-y:auto;overscroll-behavior:contain}
+  .fiche__in{max-height:none}
+  .fiche__txt{overflow:visible}
+  .fiche__ligne{grid-template-columns:3rem 1fr}
+  .fiche__go{grid-column:2;justify-self:start}
+}
+body.fige{overflow:hidden}
+.jour__vide{padding:1rem 1.2rem;color:var(--encre-doux);font-size:.88rem}
+@media (max-width:820px){
+  .marquise{padding:.6rem 1rem .7rem}
+  #films{padding-top:4.6rem;padding-bottom:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .rideau,.une__poussiere{display:none}
+  .marquise::before,.decompte__rec{animation:none}
+}
+@media print{ .rideau,.une__poussiere,.films-outils,.fiche,.decompte{display:none!important} #films{background:none;color:#000} }
+</style>
+</head>
+<body>
+
+<!-- lever de rideau (purement décoratif) -->
+<div class="rideau" aria-hidden="true"><span></span><span></span></div>
+
+<!-- Barre de progression de lecture : la couleur change selon le sens du défilement -->
+<div class="progression" id="progression" aria-hidden="true">
+  <span class="progression__jauge" id="progression-jauge"></span>
+  <span class="progression__tete" id="progression-tete"></span>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.4 3h3l1.5 4-2 1.4a12.4 12.4 0 0 0 6.7 6.7l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17.2 17.2 0 0 1 4.4 5.2 2 2 0 0 1 6.4 3Z"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.6 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6A22 22 0 0 0 14.4 3.5c-2.6 0-4.3 1.6-4.3 4.4v2H7.4V13h2.7v8Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><path d="M16.9 7.1h.01"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M8 4.5v15M16 4.5v15M3 12h18M3 8.2h5M3 15.8h5M16 8.2h5M16 15.8h5"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.6a2.4 2.4 0 0 0 0 4.8V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.6a2.4 2.4 0 0 0 0-4.8Z"/><path d="M14 6v12"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.2 2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.5l6-.8Z"/></symbol>
+  <symbol id="i-loupe" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+  <symbol id="i-haut" viewBox="0 0 24 24"><path d="M12 19.5V5m0 0-6.5 6.5M12 5l6.5 6.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20a6.2 6.2 0 0 1 12.4 0"/><path d="M16.5 5.2a3.4 3.4 0 0 1 0 5.8M17.8 14.2a6.2 6.2 0 0 1 3.4 5.8"/></symbol>
+  <symbol id="i-bobine" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="6.6" r="1.6"/><circle cx="12" cy="17.4" r="1.6"/><circle cx="6.6" cy="12" r="1.6"/><circle cx="17.4" cy="12" r="1.6"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><rect x="2.8" y="7" width="12.4" height="10" rx="2.4"/><path d="m15.2 12 6 3.4v-6.8L15.2 12Z"/></symbol>
+</svg>
+
+<header class="bandeau" id="bandeau">
+  <a class="marque" href="#accueil">
+    <span class="marque__pic" aria-hidden="true"><svg class="ic" style="font-size:1.3rem"><use href="#i-bobine"></use></svg></span>
+    <span class="marque__t">Cinés-Pays<span class="marque__s" id="marque-edition">Festival de Brocéliande</span></span>
+  </a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="menu" id="menu" aria-label="Navigation principale">
+    <a href="#festival">Le festival</a>
+    <a href="#cinemas">Les cinémas</a>
+    <a href="#programme">Programme</a>
+    <a href="#films">Les films</a>
+    <a href="#animations">Animations</a>
+    <a href="#reseaux">Nous suivre</a>
+    <a href="#tarifs" class="bt bt--s">Tarifs</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ====================== ACCUEIL ====================== -->
+<section class="une" id="accueil">
+  <div class="une__faisceau" aria-hidden="true"></div>
+  <canvas class="une__poussiere" aria-hidden="true"></canvas>
+  <div class="une__drape une__drape--g" aria-hidden="true"></div>
+  <div class="une__drape une__drape--d" aria-hidden="true"></div>
+  <div class="une__in">
+    <div class="une__txt">
+      <p class="billet"><svg class="ic ic--p" aria-hidden="true"><use href="#i-star"></use></svg> <span id="billet-edition">Le festival des six cinémas</span></p>
+      <h1><span class="l1">Cinés-Pays</span><span class="l2" id="titre-annee"></span></h1>
+      <p class="dates" id="dates-festival">Une semaine de cinéma · vacances de la Toussaint</p>
+      <p class="decompte" id="decompte" hidden><span class="decompte__rec" aria-hidden="true"></span><span id="decompte-txt"></span></p>
+      <p class="intro">Une folle semaine de cinéma dans 6 salles associatives de Brocéliande. Sorties nationales, avant-premières, films pour les petits et les grands, ateliers et rencontres — le tout à deux pas de chez vous.</p>
+      <div class="une__bt">
+        <a href="#programme" class="bt"><svg class="ic" aria-hidden="true"><use href="#i-film"></use></svg> Voir le programme</a>
+        <a href="#cinemas" class="bt bt--v">Choisir mon cinéma</a>
+      </div>
+      <div class="une__suivre">
+        <span>Suivez le festival</span>
+        <a href="https://www.instagram.com/festivalcinespays/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Cinés-Pays (nouvelle fenêtre)"><span class="pastille pastille--ig"><svg class="ic" aria-hidden="true"><use href="#i-ig"></use></svg></span>Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61594194277572" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Cinés-Pays (nouvelle fenêtre)"><span class="pastille pastille--fb"><svg class="ic" aria-hidden="true"><use href="#i-fb"></use></svg></span>Facebook</a>
+      </div>
+    </div>
+    <div class="pile" id="pile-affiches" aria-hidden="true"></div>
+  </div>
+  <div class="pellicule reveal">
+    <ul aria-label="Le festival en chiffres">
+      <li><b id="chiffre-cinemas" data-n="6">6</b><span>cinémas</span></li>
+      <li><b data-n="8">8</b><span>salles</span></li>
+      <li><b id="chiffre-seances" data-n="195">195</b><span>séances</span></li>
+      <li><b id="chiffre-films" data-n="39">39</b><span>films</span></li>
+      <li><b id="chiffre-jours" data-n="7">7</b><span>jours</span></li>
+      <li><b data-n="300">300</b><span>bénévoles</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== LE FESTIVAL ====================== -->
+<section class="sec" id="festival">
+  <div class="sec__tete reveal">
+    <h2>C’est quoi, Cinés-Pays&nbsp;?</h2>
+    <p>Le rendez-vous annuel des six cinémas associatifs de Brocéliande. Une semaine, six villes, un même plaisir&nbsp;: voir des films ensemble.</p>
+  </div>
+  <div class="duo">
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg> Six salles, une équipe</h3>
+      <p>Bréal, Montauban, Montfort, Plélan, Romillé et Saint-Méen s’associent chaque automne. Derrière les projecteurs, 300 bénévoles font tourner la semaine.</p>
+    </div>
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-film"></use></svg> Du choix pour tout le monde</h3>
+      <p>39 films à l’affiche&nbsp;: sorties nationales, avant-premières, séances jeune public dès le matin et grands rendez-vous du soir.</p>
+    </div>
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-cam"></use></svg> Pas que des projections</h3>
+      <p>Stages mini-film pour les 8–11 ans, séances Ciné-Jeunes, avant-premières suivies d’échanges avec des équipes de film et des associations.</p>
+    </div>
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg> Le prix d’un ticket</h3>
+      <p>Un tarif unique pour toutes les séances du festival, le tarif habituel de la salle pour les moins de 14 ans, des places à 3&nbsp;€ pour les séances spéciales enfants, et le Pass Culture accepté.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== LES CINÉMAS ====================== -->
+<section class="sec" id="cinemas">
+  <div class="sec__tete reveal">
+    <h2>Les six cinémas</h2>
+    <p>Cliquez sur une salle pour ouvrir son programme complet, jour par jour.</p>
+  </div>
+  <div class="cines">
+      <a class="carte-cine reveal" href="#programme" data-goto="bobine">
+        <span class="carte-cine__ville">Bréal-sous-Montfort</span>
+        <span class="carte-cine__nom">La Bobine</span>
+        <span class="carte-cine__nb">41 séances</span>
+      </a>
+      <a class="carte-cine reveal" href="#programme" data-goto="montal">
+        <span class="carte-cine__ville">Montauban-de-Bretagne</span>
+        <span class="carte-cine__nom">Ciné-Montal</span>
+        <span class="carte-cine__nb">26 séances</span>
+      </a>
+      <a class="carte-cine reveal" href="#programme" data-goto="cane">
+        <span class="carte-cine__ville">Montfort-sur-Meu</span>
+        <span class="carte-cine__nom">La Cane</span>
+        <span class="carte-cine__nb">26 séances</span>
+      </a>
+      <a class="carte-cine reveal" href="#programme" data-goto="hermine">
+        <span class="carte-cine__ville">Plélan-le-Grand</span>
+        <span class="carte-cine__nom">L’Hermine</span>
+        <span class="carte-cine__nb">24 séances</span>
+      </a>
+      <a class="carte-cine reveal" href="#programme" data-goto="korrigan">
+        <span class="carte-cine__ville">Romillé</span>
+        <span class="carte-cine__nom">Le Korrigan</span>
+        <span class="carte-cine__nb">27 séances</span>
+      </a>
+      <a class="carte-cine reveal" href="#programme" data-goto="celtic">
+        <span class="carte-cine__ville">Saint-Méen-le-Grand</span>
+        <span class="carte-cine__nom">Le Celtic</span>
+        <span class="carte-cine__nb">51 séances</span>
+      </a>
+  </div>
+</section>
+
+<!-- ====================== PROGRAMME ====================== -->
+<section class="sec" id="programme">
+  <div class="sec__tete reveal">
+    <h2>Le programme, salle par salle</h2>
+    <p id="programme-sous">Une semaine de séances dans les six cinémas.</p>
+  </div>
+
+  <div class="onglets" id="onglets" role="tablist" aria-label="Choisir un cinéma"></div>
+
+  <div class="filtres" id="filtres-jours" role="group" aria-label="Filtrer par jour"></div>
+
+  <p class="alerte-csv" id="programme-alerte" hidden></p>
+
+  <div id="panneaux"></div>
+
+  <div class="legende">
+    <span><b>Sortie nationale</b> — le film sort le jour même partout en France</span>
+    <span><b>Avant-première</b> — avant la sortie officielle</span>
+    <span><b>Rencontre</b> — échange avec une équipe de film ou une association</span>
+    <span><b>Ciné-Jeunes</b> et <b>Mon Petit Ciné</b> — séances jeune public à 3&nbsp;€</span>
+    <span><b>VOST</b> — version originale sous-titrée</span>
+    <span id="legende-int" hidden><b>-12 / -16</b> — film interdit aux moins de 12 / 16 ans, un justificatif d’âge peut être demandé</span>
+  </div>
+</section>
+
+<!-- ====================== LES FILMS ====================== -->
+<section class="sec" id="films">
+  <div class="sec__tete reveal">
+    <h2 class="marquise" id="films-titre">Les films de la semaine</h2>
+    <p id="films-sous">De l’animation pour les tout-petits au grand film du soir, voici toute la sélection. Cliquez sur une affiche pour voir où et quand le film passe.</p>
+  </div>
+  <div class="films-outils reveal">
+    <div class="puces" role="group" aria-label="Filtrer les films">
+      <button type="button" class="puce" data-filtre="tous" aria-pressed="true">Tous</button>
+      <button type="button" class="puce" data-filtre="jeune" aria-pressed="false">Jeune public</button>
+      <button type="button" class="puce" data-filtre="avp" aria-pressed="false">Avant-premières</button>
+      <button type="button" class="puce" data-filtre="sn" aria-pressed="false">Sorties nationales</button>
+    </div>
+    <label class="cherche"><svg class="ic" aria-hidden="true"><use href="#i-loupe"></use></svg><input type="search" id="cherche-film" placeholder="Rechercher un film…" aria-label="Rechercher un film" autocomplete="off"></label>
+    <p class="films-nb" id="films-nb" aria-live="polite"></p>
+  </div>
+  <p class="films-vide" id="films-vide" hidden>Aucun film ne correspond à votre recherche. Essayez un autre mot ou le filtre « Tous ».</p>
+  <div class="films" id="films-grille"></div>
+</section>
+
+<section class="sec" id="animations">
+  <div class="sec__tete reveal">
+    <h2>Les animations</h2>
+    <p>En plus des séances, chaque salle propose ses rendez-vous.</p>
+  </div>
+  <div class="anim">
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-cam"></use></svg> Stage mini-film · 8 à 11 ans</h3>
+      <p>Trois heures trente pour écrire, tourner et monter un petit film, encadré par la compagnie Artefakt. Tarif 2&nbsp;€, places limitées, inscription à l’accueil de votre cinéma.</p>
+      <ul id="anim-stage"></ul>
+    </div>
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-star"></use></svg> Séances Ciné-Jeunes</h3>
+      <p>Une séance par salle, à 3&nbsp;€, avec un film choisi pour les enfants.</p>
+      <ul id="anim-cj"></ul>
+    </div>
+    <div class="bloc reveal">
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg> Avant-premières &amp; rencontres</h3>
+      <p>Plusieurs séances sont proposées avant la sortie nationale, certaines en présence d’une association ou d’un intervenant.</p>
+      <ul id="anim-avp"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TARIFS & PASS CULTURE ====================== -->
+<section class="sec" id="tarifs">
+  <div class="sec__tete reveal">
+    <h2>Tarifs &amp; Pass Culture</h2>
+    <p>Un prix unique dans les six salles, pendant toute la semaine du festival. Tous les prix sont TTC.</p>
+  </div>
+  <div class="tarifs">
+    <ul class="prix reveal">
+      <li><b>Tarif unique festival<span>Toutes les séances, dans les six cinémas</span></b><em>4,50&nbsp;€</em></li>
+      <li><b>Moins de 14 ans<span>Le tarif habituel de votre cinéma s’applique</span></b><em class="prix__txt">Tarif salle</em></li>
+      <li><b>Séances spéciales enfants<span>Ciné-Jeunes et Mon Petit Ciné</span></b><em>3,00&nbsp;€</em></li>
+      <li><b>Stage mini-film<span>8 à 11 ans · 3h30 · sur inscription</span></b><em>2,00&nbsp;€</em></li>
+      <li><b>Moyens de paiement<span>Espèces, chèques, Chèque Cinéma Universel et Cinéchèques</span></b><em>✓</em></li>
+    </ul>
+
+    <div class="pass reveal">
+      <a class="carte-pass" href="https://pass.culture.fr/" target="_blank" rel="noopener noreferrer" aria-label="Le Pass Culture est accepté (site officiel, nouvelle fenêtre)">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="8.5" fill="none" stroke="currentColor" stroke-width="2.3"/>
+          <g stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
+            <path d="M20 2.6v5M20 32.4v5M2.6 20h5M32.4 20h5M7.7 7.7l3.5 3.5M28.8 28.8l3.5 3.5M32.3 7.7l-3.5 3.5M11.2 28.8l-3.5 3.5"/>
+          </g>
+        </svg>
+        <span class="carte-pass__m">pass<span>Culture</span></span>
+        <span class="carte-pass__p">Accepté dans nos salles · 15–20 ans</span>
+      </a>
+      <h3>Vous avez entre 15 et 20 ans&nbsp;?</h3>
+      <p>Votre crédit Pass Culture est utilisable pendant le festival. Réservez votre séance depuis l’application, puis présentez votre contremarque à la caisse du cinéma.</p>
+      <a class="bt bt--p bt--s" href="https://pass.culture.fr/" target="_blank" rel="noopener noreferrer">Découvrir le Pass Culture</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== RÉSEAUX CINÉS-PAYS ====================== -->
+<section class="sec" id="reseaux">
+  <div class="reseaux reveal">
+    <div class="reseaux__txt">
+      <h2>Suivez Cinés-Pays</h2>
+      <p>Annonces des avant-premières, bandes-annonces, coulisses et photos du festival&nbsp;: toute l’actualité de Cinés-Pays, au jour le jour.</p>
+    </div>
+    <div class="reseaux__cartes">
+      <a class="rs rs--ig" href="https://www.instagram.com/festivalcinespays/" target="_blank" rel="noopener noreferrer" aria-label="Suivre Cinés-Pays sur Instagram (nouvelle fenêtre)">
+        <span class="pastille pastille--ig"><svg class="ic" aria-hidden="true"><use href="#i-ig"></use></svg></span>
+        <span><span class="rs__nom">Instagram</span><span class="rs__id">@festivalcinespays</span></span>
+        <span class="rs__go">S’abonner</span>
+      </a>
+      <a class="rs rs--fb" href="https://www.facebook.com/profile.php?id=61594194277572" target="_blank" rel="noopener noreferrer" aria-label="Suivre Cinés-Pays sur Facebook (nouvelle fenêtre)">
+        <span class="pastille pastille--fb"><svg class="ic" aria-hidden="true"><use href="#i-fb"></use></svg></span>
+        <span><span class="rs__nom">Facebook</span><span class="rs__id">Festival Cinés-Pays</span></span>
+        <span class="rs__go">Suivre la page</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="pied">
+    <div>
+      <h4>La Bobine</h4>
+      <p>Bréal-sous-Montfort</p>
+      <p>30 rue de la Petite Motte</p>
+      <p>02 23 41 19 62</p>
+      <a href="https://www.cinelabobine35.fr/" target="_blank" rel="noopener noreferrer">Site du cinéma</a>
+    </div>
+    <div>
+      <h4>Ciné-Montal</h4>
+      <p>Montauban-de-Bretagne</p>
+      <p>28 rue du Perry</p>
+      <p>02 99 06 44 30</p>
+      <a href="https://cine-montal.jimdofree.com/" target="_blank" rel="noopener noreferrer">Site du cinéma</a>
+    </div>
+    <div>
+      <h4>La Cane</h4>
+      <p>Montfort-sur-Meu</p>
+      <p>13 boulevard Carnot</p>
+      <p>02 99 09 09 37</p>
+      <a href="https://www.cinemalacane.fr/" target="_blank" rel="noopener noreferrer">Site du cinéma</a>
+    </div>
+    <div>
+      <h4>L’Hermine</h4>
+      <p>Plélan-le-Grand</p>
+      <p>Rue de l’Hermine</p>
+      <p>02 99 06 89 58</p>
+      <a href="https://cinema-hermine.fr/" target="_blank" rel="noopener noreferrer">Site du cinéma</a>
+    </div>
+    <div>
+      <h4>Le Korrigan</h4>
+      <p>Romillé</p>
+      <p>3 rue de la Vaunoise</p>
+      
+      <a href="https://www.cinekorrigan-romille.fr/" target="_blank" rel="noopener noreferrer">Site du cinéma</a>
+    </div>
+    <div>
+      <h4>Le Celtic</h4>
+      <p>Saint-Méen-le-Grand</p>
+      <p>Rue Théodore Botrel</p>
+      <p>02 99 09 49 21</p>
+      <a href="https://www.le-celtic.com/" target="_blank" rel="noopener noreferrer">Site du cinéma</a>
+    </div>
+  </div>
+  <div class="pied-bas">
+    <p id="pied-edition">Festival Cinés-Pays · Brocéliande, Ille-et-Vilaine</p>
+    <nav>
+      <a class="bt bt--v bt--s bt--rs" href="https://www.instagram.com/festivalcinespays/" target="_blank" rel="noopener noreferrer">
+        <svg class="ic" aria-hidden="true"><use href="#i-ig"></use></svg> Instagram
+      </a>
+      <a class="bt bt--v bt--s bt--rs" href="https://www.facebook.com/profile.php?id=61594194277572" target="_blank" rel="noopener noreferrer">
+        <svg class="ic ic--p" aria-hidden="true"><use href="#i-fb"></use></svg> Facebook
+      </a>
+      <a class="bt bt--v bt--s" href="https://www.allocine.fr/salle/cinema/departement-83121/" target="_blank" rel="noopener noreferrer">
+        <svg class="ic" aria-hidden="true"><use href="#i-film"></use></svg> Nos salles sur AlloCiné
+      </a>
+      <a class="bt bt--p bt--s" href="https://pass.culture.fr/" target="_blank" rel="noopener noreferrer">
+        <svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg> Pass Culture
+      </a>
+    </nav>
+  </div>
+  <nav class="pied-legal" aria-label="Informations légales">
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+  </nav>
+</footer>
+
+<dialog class="fiche" id="fiche" aria-labelledby="fiche-titre">
+  <button type="button" class="fiche__fermer" id="fiche-fermer" aria-label="Fermer">×</button>
+  <div class="fiche__in">
+    <div class="fiche__aff" id="fiche-aff"></div>
+    <div class="fiche__txt">
+      <h3 id="fiche-titre"></h3>
+      <p class="fiche__resume" id="fiche-resume"></p>
+      <div id="fiche-liste"></div>
+      <div class="fiche__ou" id="fiche-ou" hidden></div>
+    </div>
+  </div>
+</dialog>
+
+<button id="haut" aria-label="Revenir en haut"><svg class="ic" aria-hidden="true"><use href="#i-haut"></use></svg></button>
+
+<script src="app.js"></script>
+</body>
+</html>
